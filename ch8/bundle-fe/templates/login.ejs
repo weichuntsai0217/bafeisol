@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <%- include partials/head.ejs %>
+  <body>
+    <%- include partials/header.ejs %>
+    <div class="fake-header"></div>
+    <main class="row product-view">
+      <div class="row sub-block">
+        <h2 class="row">會員登入/註冊</h2>
+      </div>
+      <div class="row sub-block">
+        <form class="row" js-dom="member-form">
+          <div class="row item-group">
+            <label class="col-1-6" for="account">
+              <h3>帳號</h3>
+            </label>
+            <div class="col-5-6">
+              <input class="block-left" type="text" name="account" id="account" placeholder="請輸入email" />
+            </div>
+          </div>
+          <div class="row item-group">
+            <label class="col-1-6" for="password">
+              <h3>密碼</h3>
+            </label>
+            <div class="col-5-6">
+              <input class="block-left" type="password" name="password" id="password" placeholder="請輸入8 ~ 32位密碼" />
+            </div>
+          </div>
+          <div class="row item-group">
+            <div class="col-1-6">
+              &nbsp;
+            </div>
+            <div class="col-1-6">
+              <button class="row" type="button" js-dom="login">登入</button>
+            </div>
+            <div class="col-1-6">
+              <button class="row type-2-button rwd-margin" type="button" js-dom="signup">註冊</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </main>
+    <% if (env === 'production') { %>
+      <script src="/js/header-login.min.js"></script>
+    <% } else { %>
+      <script src="/js/header.js"></script>
+      <script src="/js/login.js"></script>
+    <% } %>
+    <% if (error) { %>
+      <script>alert('<%= error %>')</script>
+    <% } %>
+  </body>
+</html>
+

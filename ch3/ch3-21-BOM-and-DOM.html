@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+</head>
+<body>
+<script>
+'use strict'
+/**
+  # 3-21 BOM and DOM
+  (要搭配圖)
+  BOM = Browser Object Model
+  DOM = Document Object Model
+
+  1. 你想透過JavaScript改變目前看到的視窗(tab)的狀態, 你就得拿到和視窗有關的資料,
+     這些資料瀏覽器已經包裝成一個叫做window的物件供你使用, 你不用自己寫.
+  2. 你想透過JavaScript改變目前視窗中的網頁的狀態, 你就得拿到和目前網頁有關的資料,
+     這些資料瀏覽器已經包裝成一個叫做document的物件供你使用, 你不用自己寫.
+
+  BOM和DOM都是瀏覽器提供的物件(其實就跟之前用過的內建函數一樣, 你不用自己寫, 瀏覽器已經提供給你),
+  讓你可以直接和網頁上面的html 元素進行互動.
+
+  (要搭配圖)
+  1. `window` 代表你目前的瀏覽器視窗(tab)
+  2. `document` 代表目前視窗內的整個html網頁, 透過document, 你可以
+     找到畫面上特定的html 元素(例如: button) 並進行互動
+  3. `document` 和其內部的 html 元素 (後代節點), 都是DOM, DOM是 "Document Object Model"的縮寫;
+     DOM都有自己的能力, 例如每個DOM都可以改變自己的文字顏色等等, 這個部分我們後面的範例會展示.
+*/
+/**
+  ## 範例 1: 練習使用window的功能 - 從目前網頁造訪別的網頁
+*/
+// 直接在console下指令
+// window.location.href = "https://www.google.com"
+
+/**
+  ## 範例 2: 練習使用window的功能 - 回到上一頁
+*/
+// 直接在console下指令
+// window.history.go(-1) // 或使用 window.history.back()
+
+/**
+  ## 範例 3: 練習使用window的功能 - 去下一頁
+*/
+// 直接在console下指令
+// window.history.go(1)
+
+/*
+  ## 範例 4: 練習使用document的功能 - 改變網頁標題(title)
+*/
+// 直接在console下指令
+// document.title = "Hello World!"
+</script>
+</body>
+</html>

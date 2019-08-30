@@ -1,0 +1,86 @@
+[
+  {
+    "img_src": "food/food-01.jpg",
+    "title": "香脆雞腿堡",
+    "price": 100,
+    "id": "FOOD01",
+    "description": "我是香脆雞腿堡，多汁美味又酥脆，大家都說讚！"
+  },
+  {
+    "img_src": "food/food-02.jpg",
+    "title": "高纖大麥片",
+    "price": 200,
+    "id": "FOOD02",
+    "description": "我是高纖大麥片，清爽健康顧腸道，大家都說讚！"
+  },
+  {
+    "img_src": "food/food-03.jpg",
+    "title": "薑汁啤酒",
+    "price": 300,
+    "id": "FOOD03",
+    "description": "我是薑汁啤酒，清涼有勁超爽快，大家都說讚！"
+  },
+  {
+    "img_src": "food/food-04.jpg",
+    "title": "精緻雞腿便當",
+    "price": 400,
+    "id": "FOOD04",
+    "description": "我是精緻雞腿便當，料多實在又新鮮，大家都說讚！"
+  },
+  {
+    "img_src": "food/food-05.jpg",
+    "title": "格紋鬆餅",
+    "price": 500,
+    "id": "FOOD05",
+    "description": "我是格紋鬆餅，香甜可口又酥脆，大家都說讚！"
+  },
+  {
+    "img_src": "food/food-06.jpg",
+    "title": "檸檬水果茶",
+    "price": 600,
+    "id": "FOOD06",
+    "description": "我是檸檬水果茶，讓你盡情享受下午時光，大家都說讚！"
+  },
+  {
+    "img_src": "fashion/fashion-01.jpg",
+    "title": "蕾絲洋裝",
+    "price": 1000,
+    "id": "FASH01",
+    "description": "我是蕾絲洋裝，優雅大方又好看，大家都說讚！"
+  },
+  {
+    "img_src": "fashion/fashion-02.jpg",
+    "title": "高領毛衣",
+    "price": 2000,
+    "id": "FASH02",
+    "description": "我是高領毛衣，保暖又百搭，大家都說讚！"
+  },
+  {
+    "img_src": "fashion/fashion-03.jpg",
+    "title": "酷炫帽T",
+    "price": 3000,
+    "id": "FASH03",
+    "description": "我是酷炫帽T，鮮豔又充滿活力，大家都說讚！"
+  },
+  {
+    "img_src": "fashion/fashion-04.jpg",
+    "title": "皮衣外套",
+    "price": 4000,
+    "id": "FASH04",
+    "description": "我是皮衣外套，充滿硬派騎士作風，大家都說讚！"
+  },
+  {
+    "img_src": "fashion/fashion-05.jpg",
+    "title": "休閒襯衫",
+    "price": 5000,
+    "id": "FASH05",
+    "description": "我是休閒襯衫，俐落隨性又帥氣，大家都說讚！"
+  },
+  {
+    "img_src": "fashion/fashion-06.jpg",
+    "title": "休閒西裝",
+    "price": 6000,
+    "id": "FASH06",
+    "description": "我是休閒西裝，經典大方又時尚，大家都說讚！"
+  }
+]

@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    .menu {
+      display: none;
+    }
+
+    .active {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+
+<h1
+  class="first heading"
+  style="border: 1px black solid; color: blue;"
+  data-name="john"
+  data-age="40"
+  data-whatever="Never mind."
+  car="toyota"
+  answer="yes"
+>
+  Are you ready?
+  <b>Let's
+    <i>go</i>!
+  </b>
+</h1>
+
+<ul class="menu active">
+  <li>購物車</li>
+  <li>時尚</li>
+  <li>美食</li>
+  <li>科技</li>
+</ul>
+
+<script>
+'use strict'
+/**
+  # 3-23 DOM的操作
+  1. 讀取修改DOM的content
+  2. 認識DOM的其他重要屬性
+  3. 增加或刪除DOM
+*/
+
+/**
+  範例 1 innerHTML: 取得DOM的內容
+*/
+// var target = document.querySelector('h1')
+// console.log(target.innerHTML)
+/**
+  # 3-23 Quiz 1 (請搭配本節使用的html)
+  請印出<b>的內容
+*/
+
+/**
+  範例 2 textContent: 取得DOM的純文字內容(無tag)
+*/
+// var target = document.querySelector('h1')
+// console.log(target.textContent)
+/**
+  # 3-23 Quiz 2 (請搭配本節使用的html)
+  請印出<b>的純文字內容
+*/
+
+/**
+  範例 3 innerHTML: 改變DOM的內容
+*/
+// var target = document.querySelector('h1')
+// target.innerHTML = '我是<strike>刪除線</strike>呦!'
+/**
+  # 3-23 Quiz 3 (請搭配本節使用的html)
+  請改變<b>的內容, 改變的內容可自定.
+*/
+
+/**
+  範例 4 tagName: 取得DOM的tag名稱
+*/
+// var target = document.querySelector('.first.heading')
+// console.log(target.tagName) // 預設是大寫string
+// console.log(target.tagName.toLowerCase())  // 轉成小寫string
+/**
+  # 3-23 Quiz 4 (請搭配本節使用的html)
+  請猜猜看下面程式會印出什麼
+  ```
+  var target = document.querySelector('.menu')
+  var tagName = target.tagName.toLowerCase()
+  console.log(tagName.toUpperCase())
+  ```
+*/
+
+/**
+  範例 5 className & classList: 取得/修改DOM的class
+*/
+// var target = document.querySelector('h1')
+// console.log(target.className)
+// console.log(target.classList.value)
+// console.log(target.classList[0])
+// console.log(target.classList[1])
+
+// console.log('新增class "top"')
+// target.classList.add('top')
+// console.log(target.classList.value)
+
+// console.log('移除class "top"')
+// target.classList.remove('top')
+// console.log(target.classList.value)
+
+// console.log('toggle 用來執行相反動作: 若有top就移除, 若沒top就新增')
+// target.classList.toggle('top')
+// console.log(target.classList.value)
+
+// console.log('toggle 用來執行相反動作: 若有top就移除, 若沒top就新增')
+// target.classList.toggle('top')
+// console.log(target.classList.value)
+
+/**
+  # 3-23 Quiz 5 (請搭配本節使用的html)
+  請問下面程式執行後, 網頁畫面會有什麼改變
+  ```
+  var target = document.querySelector('.menu')
+  target.classList.remove('active')
+  ```
+*/
+
+/**
+  範例 6 style: 取得DOM的style
+*/
+// var target = document.querySelector('h1')
+// console.log(target.style)
+/**
+  # 3-23 Quiz 6 (請搭配本節使用的html)
+  請將h1的style "border-radius"設定成"5px"
+*/
+
+/**
+  範例 7 data-*: 取得/修改 data-* 屬性
+*/
+// var target = document.querySelector('h1')
+// console.log(target.dataset)
+// console.log(target.dataset.name)
+// console.log(target.dataset.age)
+// console.log('whatever改變前:', target.dataset.whatever)
+// target.dataset.whatever = 'I don\'t care.'
+// console.log('whatever改變後:', target.dataset.whatever)
+/**
+  # 3-23 Quiz 7 (請搭配本節使用的html)
+  請將h1的"data-name"的值改成"alice"
+*/
+
+/**
+  範例 8 getAttribute & setAttribute: 取得/修改任意屬性
+*/
+// var target = document.querySelector('h1')
+// console.log(target.getAttribute('class'))
+// console.log(target.getAttribute('style'))
+// console.log(target.getAttribute('data-name'))
+// console.log(target.getAttribute('data-age'))
+// console.log(target.getAttribute('data-whatever'))
+// console.log(target.getAttribute('car'))
+// console.log(target.getAttribute('answer'))
+// target.setAttribute('answer', 'no')
+// console.log('"answer"被修改後 =', target.getAttribute('answer'))
+
+/**
+  範例 9 parentNode: 取得parent node
+*/
+// var target = document.querySelector('.menu')
+// var parent = target.parentNode
+// console.log(parent.tagName)
+/**
+  # 3-23 Quiz 9 (請搭配本節使用的html)
+  請取出<i>的阿公節點(也就是parent的parent), 並印出阿公節點的tag名稱
+*/
+
+/**
+  範例 10 previousElementSibling: 取得前一個sibling node
+*/
+// var target = document.querySelectorAll('li')[1]
+// var previous = target.previousElementSibling
+// console.log(previous.innerHTML)
+/**
+  # 3-23 Quiz 10 (請搭配本節使用的html)
+  1. 請說出下面程式會印出什麼
+  ```
+  var target = document.querySelector('ul')
+  var previous = target.previousElementSibling
+  console.log(previous.tagName)
+  ```
+  2. 請猜猜看下面程式會印出什麼
+  ```
+  var target = document.querySelectorAll('li')[0]
+  var previous = target.previousElementSibling
+  console.log(previous)
+  ```
+*/
+
+/**
+  範例 11 nextElementSibling: 取得下一個sibling node
+*/
+// var target = document.querySelectorAll('li')[1]
+// var next = target.nextElementSibling
+// console.log(next.innerHTML)
+/**
+  # 3-23 Quiz 11 (請搭配本節使用的html)
+  1. 請說出下面程式會印出什麼
+  ```
+  var target = document.querySelector('h1')
+  var next = target.nextElementSibling
+  console.log(next.tagName)
+  ```
+  2. 請猜猜看下面程式會印出什麼
+  ```
+  var target = document.querySelectorAll('li')[2]
+  var next = target.nextElementSibling
+  console.log(next)
+  ```
+*/
+
+/**
+  範例 12 children: 取得child node
+*/
+// var target = document.querySelector('ul')
+// var childs= target.children
+// console.log(childs)
+/**
+  # 3-23 Quiz 12 (請搭配本節使用的html)
+  承範例12, 若我只想印每個li內的文字, 請問`console.log(childs)`這行要怎麼改?
+*/
+
+/**
+  先幫大家複習html的樹狀結構(要給一張圖), 且說明純文字本身也是一個節點(用換行符號, 也就是按下enter來區分)
+  用三張投影片(每張都要附html的樹狀圖):
+  1. innerText vs textContent
+  2. previousElementSibling vs previousSibling
+  3. nextElementSibling vs nextSibling
+  4. children vs childNodes
+*/
+
+/**
+  範例 13 createElement: 新建一個原本網頁原始碼中沒有的DOM
+  這個指令只是產生新的DOM, 但這個DOM並沒有放到網頁目前的DOM tree內, 所以畫面上看不到
+*/
+// var btn = document.createElement('button') // 'button'字串 小寫大寫都可以
+// btn.innerHTML = 'Click me!' // 設定這個新的DOM的內容
+/**
+  # 3-23 Quiz 13 (請搭配本節使用的html)
+  請用`createElement`新建一個p的元素, 其內容為'我是p', 並說明這個新建的p元素為何沒出現在網頁畫面上.
+*/
+
+/**
+  範例 14 appendChild: 加在最後一個child之後(變成最後一個child)
+*/
+// var btn = document.createElement('button') // 'button'字串 小寫大寫都可以
+// btn.innerHTML = 'Click me!' // 設定這個新的DOM的內容
+// document.body.appendChild(btn) // body 把 新建的btn 加進成為最後一個child
+/**
+  # 3-23 Quiz 14 (請搭配本節使用的html)
+  新建一個p的元素, 其內容為'我是p', 並將此新建元素加在ul的最後一個child之後.
+*/
+
+/**
+  範例 15 insertBefore: 加在特定的child之前
+*/
+// var btn = document.createElement('button')
+// btn.innerHTML = 'Click me!'
+// document.body.insertBefore(btn, document.body.children[0])
+/**
+  # 3-23 Quiz 15 (請搭配本節使用的html)
+  新建一個p的元素, 其內容為'我是p', 並將此新建元素加在ul的第2個child("時尚")之前.
+*/
+
+/**
+  範例 16 insertAdjacentElement: adjacent就是'相鄰'的意思
+  有4種用法(用一張圖輔助)
+  1. 'beforebegin': 變成前一個sibling
+  2. 'afterbegin': 變成第一個child
+  3. 'beforeend': 變成最後一個child
+  4. 'afterend': 變成後一個sibling
+*/
+// var ul = document.querySelector('ul')
+
+// var btn1 = document.createElement('button')
+// btn1.innerHTML = '變成ul的前一個sibling'
+// ul.insertAdjacentElement('beforebegin', btn1)
+
+// var btn2 = document.createElement('button')
+// btn2.innerHTML = '變成ul的第一個child'
+// ul.insertAdjacentElement('afterbegin', btn2)
+
+// var btn3 = document.createElement('button')
+// btn3.innerHTML = '變成ul的最後一個child'
+// ul.insertAdjacentElement('beforeend', btn3)
+
+// var btn4 = document.createElement('button')
+// btn4.innerHTML = '變成ul的後一個sibling'
+// ul.insertAdjacentElement('afterend', btn4)
+/**
+  # 3-23 Quiz 16 (請搭配本節使用的html)
+  1. 新建一個p的元素, 其內容為'我是p1', 並將此新建元素加在<li>時尚</li>之前.
+  2. 新建一個p的元素, 其內容為'我是p2', 並將此新建元素加在<li>時尚</li>之後.
+*/
+
+/**
+  範例 17 移動原本就有的DOM: appendChild / insertBefore / insertAdjacentElement都可以改變本來就有的DOM的位置.
+  以appendChild為例, h1 原本是 body的第1個child, 現在我想把它移動成為最後一個child.
+*/
+// var h = document.querySelector('h1')
+// document.body.appendChild(h)
+/**
+  # 3-23 Quiz 17 (請搭配本節使用的html)
+  請將<i>go</>移到<li>科技</li>之前 (<i>會變成<li>的前一個sibling)
+*/
+
+/**
+  範例 18 removeChild: 將特定child從DOM tree中移除 並回傳被移除的child
+*/
+// var ul = document.querySelector('ul')
+// var removedItem = ul.removeChild(ul.children[1])
+// console.log(removedItem.textContent)
+// console.log(removedItem.tagName)
+/**
+  # 3-23 Quiz 18 (請搭配本節使用的html)
+  1. 請說明下面程式碼會讓畫面產生什麼變化
+    ```
+    var h1 = document.querySelector('h1')
+    var b = document.querySelector('b')
+    h1.removeChild(b)
+    ```
+  2. 請問下面程式碼執行後是否會報錯? 若會報錯, 請猜測可能的原因
+    ```
+    var h1 = document.querySelector('h1')
+    var i = document.querySelector('i')
+    h1.removeChild(i)
+    ```
+*/
+
+/**
+  範例 19 remove: 移除DOM本身
+*/
+// var ul = document.querySelector('ul')
+// ul.remove()
+/**
+  # 3-23 Quiz 19 (請搭配本節使用的html)
+  請說明下面程式碼會讓畫面產生什麼變化
+  ```
+  var h1 = document.querySelector('h1')
+  h1.remove()
+  ```
+*/
+
+/**
+  範例 20 綜合練習 - 從資料產生DOM
+*/
+// var menuData = ['咖啡', '紅茶', '可樂']
+// var target = document.querySelector('ul.menu')
+// target.insertAdjacentElement('afterend', getUlMenu(menuData))
+
+// function getUlMenu(data) {
+//   var ul = document.createElement('ul')
+//   for (var i = 0; i < data.length; i++) {
+//     var li = document.createElement('li')
+//     li.innerHTML = data[i]
+//     ul.appendChild(li)
+//   }
+//   return ul
+// }
+
+/**
+  # 3-23 Quiz 20 (請搭配本節使用的html)
+  承 範例 20, 若menuData變成
+  ```
+  var menuData = [
+    { name: '咖啡', price: 80 },
+    { name: '紅茶', price: 50 },
+    { name: '可樂', price: 23 },
+  ]
+  ```
+  且我需要li的內容為"名稱: 價錢",
+  例如: <li>咖啡: 80元</li>
+  請問function getUlMenu應該如何改寫?
+*/
+
+/**
+  1. 從資料產生DOM是很好用的技巧, 在同樣的資料下, 這可以讓你輕易地改變呈現方式,
+  以範例20為例, 若今天我想用p tag來呈現資料, 那我只要將function getUlMenu
+  的li改成p即可.
+  2. 這個技巧的重點就是, 將data和render分開.
+*/
+
+</script>
+</body>
+</html>

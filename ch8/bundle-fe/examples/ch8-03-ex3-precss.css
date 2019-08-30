@@ -1,0 +1,24 @@
+/**
+  ## ch8-03 範例3: precss
+  * 本範例皆截錄自先前我們撰寫的光速買網站的css檔
+  * 可以在css中宣告變數, 再用precss轉成瀏覽器看得懂的css.
+  * 常用情境: 例如, 以後網站想改重要的主題顏色, 只需改變數設定即可
+*/
+
+$mainColor: #e91e63; /* 網站的主題顏色 #e91e63 */
+
+button {
+  background: $mainColor; /* 光速買的主要button背景顏色 */
+}
+
+nav ul li.active {
+  border-bottom: 2px solid $mainColor; /* 光速買active nav link的底線顏色 */
+}
+
+.shopping-cart-wrapper .quantity {
+  background: $mainColor; /* 光速買的購物車上商品數量的背景顏色 */
+}
+
+.total-price {
+  color: $mainColor; /* 光速買的訂單dialog的總金額顏色 */
+}

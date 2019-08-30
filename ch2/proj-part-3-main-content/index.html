@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>光速買</title>
+    <style>
+      
+      * {
+        margin: 0;
+        padding: 0;
+        font-family: sans-serif;
+        box-sizing: border-box;
+      }
+
+      body {
+        background: #f4f4f4;
+        color: #57585a;
+      }
+
+      header {
+        background: #fff;
+      }
+
+      h1 {
+        font-size: 32px;
+        margin: 12px 20px;
+      }
+
+			input {
+				border: 1px solid #999999;
+				padding: 10px;
+				font-size: 18px;
+        height: 43px;
+        margin-top: 12px;
+			}
+
+			input[type="text"] {
+        border-radius: 4px 0 0 4px;
+        border-right: none;
+      }
+
+			input[type="button"] {
+        border-radius: 0 4px 4px 0;
+				border: 0;
+				background: rgb(233, 30, 99);
+				color: white;
+			}
+
+      ul li {
+        list-style-type: none;
+      }
+
+      nav ul li {
+        margin: 12px 20px;
+        line-height: 45px;
+        font-size: 20px;
+      }
+
+      img {
+        width: 100%;
+        height: auto;
+      }
+
+      .sub-heading-wrapper {
+        text-align: center;
+        color: #fff;
+        padding: 30px;
+        background: -webkit-linear-gradient(0deg, rgb(251, 176, 30), rgb(229, 2, 18), rgb(192, 6, 156));
+        box-shadow: 0 4px 4px 0 rgba(0,0,0,0.2);
+      }
+
+      .sub-heading-wrapper h2 {
+        font-size: 50px;
+      }
+
+      .sub-heading-wrapper p {
+        font-size: 30px;
+      }
+
+      .block-left {
+        display: block;
+        float: left;
+      }
+
+      .main-top-fig {
+        width: 100%;
+        height: 600px;
+        text-align: center;
+        background: url("../imgs/top-bg.jpg");
+        background-size: cover;
+        background-position: 0 -200px;
+      }
+
+      .main-top-fig p {
+        font-size: 50px;
+        padding: 50px 0 0 0; 
+        color: white;
+      }
+
+      .row {
+        display: block;
+        float: left;
+        width: 100%;
+      }
+
+      .right {
+        float: right
+      }
+
+      [class *= "col-"] {
+        display: block;
+        float: left;
+      }
+
+      .col-1-4 {
+        width: 25%;
+      }
+
+      .main-item {
+        padding: 20px;
+      }
+
+      .card {
+        cursor: pointer;
+        background: #fff;
+        box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+      }
+
+      .card, .card-image, .card-content {
+        width: 100%;
+      }
+
+      .card .card-content {
+        padding: 12px;
+      }
+
+      .card .card-content p {
+        white-space: nowrap; /* 決定文字長度超過寬度是否自動往下長 */
+        text-overflow: ellipsis;
+        overflow: hidden;
+        font-size: 14px;
+        padding: 0;
+      }
+
+      .card .card-content p.title, .card .card-content p.price {
+        font-size: 16px;
+      }
+
+      .card .card-content p.price {
+        font-weight: bold;
+      }
+
+    </style>
+  </head>
+  <body>
+    <header class="row">
+      <h1 class="block-left">光速買</h1>
+      <input class="block-left" type="text" placeholder="想買什麼？" />
+      <input class="block-left" type="button" value="搜尋" />
+      <nav class="right">
+        <ul>
+          <li class="block-left">時尚流行</li>
+          <li class="block-left">生活家居</li>
+          <li class="block-left">酷炫科技</li>
+          <li class="block-left">美味零食</li>
+        </ul>
+      </nav>
+    </header>
+    <main class="row">
+      <div class="row main-top-fig">
+        <p>馬上買，現在就買！</p>
+      </div>
+      <div class="row sub-heading-wrapper">
+        <h2>2019 夏季大特賣</h2>
+        <p>時間自&nbsp;<time>07/01</time>&nbsp;至&nbsp;<time>08/31</time>&nbsp;為止</p>
+        <p>限時特價中！</p>
+      </div>
+      <div class="row">
+        <div class="col-1-4 main-item">
+          <div class="card">
+            <div class="card-image">
+              <img src="../imgs/item.jpg">
+            </div>
+            <div class="card-content">
+              <p class="title">濃湯調理包</p>
+              <p class="price">NT$ 100</p>
+              <p>夏季限定最新口味調理包夏季限定最新口味調理包夏季限定最新口味調理包夏季限定最新口味調理包</p>
+              <p>光速好食有限公司</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-1-4 main-item">
+          <div class="card">
+            <div class="card-image">
+              <img src="../imgs/item.jpg">
+            </div>
+            <div class="card-content">
+              <p class="title">濃湯調理包</p>
+              <p class="price">NT$ 100</p>
+              <p>夏季限定最新口味調理包夏季限定最新口味調理包夏季限定最新口味調理包夏季限定最新口味調理包</p>
+              <p>光速好食有限公司</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-1-4 main-item">
+          <div class="card">
+            <div class="card-image">
+              <img src="../imgs/item.jpg">
+            </div>
+            <div class="card-content">
+              <p class="title">濃湯調理包</p>
+              <p class="price">NT$ 100</p>
+              <p>夏季限定最新口味調理包夏季限定最新口味調理包夏季限定最新口味調理包夏季限定最新口味調理包</p>
+              <p>光速好食有限公司</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-1-4 main-item">
+          <div class="card">
+            <div class="card-image">
+              <img src="../imgs/item.jpg">
+            </div>
+            <div class="card-content">
+              <p class="title">濃湯調理包</p>
+              <p class="price">NT$ 100</p>
+              <p>夏季限定最新口味調理包夏季限定最新口味調理包夏季限定最新口味調理包夏季限定最新口味調理包</p>
+              <p>光速好食有限公司</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-1-4 main-item">
+          <div class="card">
+            <div class="card-image">
+              <img src="../imgs/item.jpg">
+            </div>
+            <div class="card-content">
+              <p class="title">濃湯調理包</p>
+              <p class="price">NT$ 100</p>
+              <p>夏季限定最新口味調理包夏季限定最新口味調理包夏季限定最新口味調理包夏季限定最新口味調理包</p>
+              <p>光速好食有限公司</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-1-4 main-item">
+          <div class="card">
+            <div class="card-image">
+              <img src="../imgs/item.jpg">
+            </div>
+            <div class="card-content">
+              <p class="title">濃湯調理包</p>
+              <p class="price">NT$ 100</p>
+              <p>夏季限定最新口味調理包夏季限定最新口味調理包夏季限定最新口味調理包夏季限定最新口味調理包</p>
+              <p>光速好食有限公司</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
+

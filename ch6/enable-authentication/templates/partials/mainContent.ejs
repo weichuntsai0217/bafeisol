@@ -1,0 +1,34 @@
+<div class="row main-content">
+  <% for (var i = 0; i < columns.length; i++) { %>
+  <div class="col-1-4 smart-grid-padding">
+    <% var columnPrducts = columns[i] %>
+    <% for (var j = 0; j < columnPrducts.length; j++) { %>
+    <%   var product = columnPrducts[j] %>
+    <div class="card row" js-dom="product">
+      <a href="/products/<%= product.id %>" js-dom="product-link">
+        <div class="card-image row mask-wrapper">
+          <img src="/imgs/<%= product.src %>" js-dom="product-img">
+          <% if (user) { %>
+            <div class="mask">
+              <button class="circle" js-dom="product-add">
+                <i class="fas fa-plus"></i>
+              </button>
+            </div>
+          <% } %>
+        </div>
+        <div class="card-content row">
+          <div class="row key-info" js-dom="product-key-info">
+            <p class="title"><%= product.title %></p>
+            <p class="price">NT$<%= product.price %></p>
+            <p><%= product.id %></p>
+          </div>
+          <div class="row">
+            <p><%= product.desc %></p>
+          </div>
+        </div>
+      </a>
+    </div>
+    <% } %>
+  </div>
+  <% } %>
+</div>

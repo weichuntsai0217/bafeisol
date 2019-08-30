@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    body {
+      margin: 0;
+      padding: 40px;
+    }
+    input {
+      display: block;
+      width: 200px;
+      font-size: 20px;
+      margin-top: 40px;
+    }
+    button {
+      display: inline-block;
+      width: 80px; height: 50px;
+      font-size: 18px;
+      margin-bottom: 10px;
+      color: red;
+    }
+    ul {
+      margin: 40px 0 0 0;
+    }
+    p {
+      color: red;
+      margin: 0;
+      padding: 0;
+    }
+    div {
+      margin: 0;
+      padding: 0;
+      width: 100px;
+      height: 100px;
+      background: red;
+    }
+    
+  </style>
+</head>
+<body>
+
+<button type="button">變綠色</button>
+<div></div>
+
+<input type="text" name="phone" placeholder="請輸入手機號碼" />
+<p>號碼輸入錯誤</p>
+
+<ul>
+  <li>Cafe</li>
+  <li>Tea</li>
+  <li>Coke</li>
+</ul>
+
+<script>
+'use strict'
+/**
+  # 3-25 Event
+  1. 之前寫的JavaScript程式, 都沒有互動性, 程式依序執行完就沒了,
+  使用者後續不管在網頁上做什麼動作(例如滑鼠的點擊或從鍵盤打字),
+  網頁畫面都不會改變, 也就是沒有互動性.
+
+  2. 什麼是互動? 互動指的是, 使用者在網頁上做動作, 網頁就做出相對應的改變.
+
+  3. 對網頁來說, 使用者每做一個動作, 就在網頁上觸發了一個事件, JavaScript就要執行此事件對應的程序.
+     例如:
+     用滑鼠點div  -> 在div身上就觸發了一個點擊事件(click event) -> 執行此點擊事件觸發時對應的程序(函數).
+
+  4. 寫程式的方式其實很簡單
+     step 1. 找到目標DOM
+     step 2. 定義特定事件觸發在目標DOM身上時, 要執行什麼函數.
+     step 3. 讓目標DOM監聽該事件
+
+  5. 事件觸發時要執行的函數, 我們稱為event handler, 或者 event callback.
+*/
+
+/**
+  範例 1: click event
+*/
+// var div = document.querySelector('div')
+// div.addEventListener('click', function (e) {
+//   console.log('click triggered.')
+//   console.log('event object =', e)
+//   console.log('e.type =', e.type) // 事件名稱
+//   console.log('e.target =', e.target) // 事件觸發的DOM object, 其實就是變數`div`
+//   console.log('e.target =', e.target.tagName) // 事件觸發的DOM的tag名稱
+//   console.log('e.clientX =', e.clientX) // 滑鼠點擊位置的X座標, 以視窗左上角為座標原點
+//   console.log('e.clientY =', e.clientY) // 滑鼠點擊位置的Y座標, 以視窗左上角為座標原點
+// })
+// 若在div身上觸發了滑鼠點擊事件, 就執行 "在console印出'click 和 event object, e.type, e.target, e.clientX, e.clientY".
+
+/**
+  # 3-25 Quiz 1
+  1. 請將範例1的event handler獨立成一個有名字的函數叫做"myCallback", 再餵進addEventListener.
+  2. 承第1小題, 請修改function "myCallback"的內容, 使得當button用滑鼠點擊時, 會將div的background改成綠色.
+*/
+
+/**
+  範例 2: mousedown -> mouseup -> click
+*/
+// var button = document.querySelector('button')
+
+// button.addEventListener('mousedown', function (e) {
+//   console.log(e.type)
+// })
+
+// button.addEventListener('mouseup', function (e) {
+//   console.log(e.type)
+// })
+
+// button.addEventListener('click', function (e) {
+//   console.log(e.type)
+// })
+
+/**
+  # 3-25 Quiz 2
+  承 3-25 Quiz 1的第2小題, 你是否可以將div的background變成綠色的過程更快發生?
+*/
+
+/**
+  範例 3: contextmenu - 滑鼠右鍵點擊時的觸發的event
+*/
+// var button = document.querySelector('button')
+// button.addEventListener('contextmenu', function (e) {
+//   console.log(e.type)
+// })
+
+/**
+  # 3-25 Quiz 3
+  請寫個程式滿足以下需求:
+  當button被滑鼠右鍵點擊時, div的背景顏色要變為黃色
+*/
+
+/**
+  範例 4: 承 3-25 Quiz 3, 我發現當div變成黃色時, 瀏覽器預設的右鍵選單也會出現, 畫面看起來很亂, 
+  我該如何讓選單不會出現?
+  請使用 preventDefault 來阻止預設行為.
+  其實不管什麼event, 或多或少都有一些預設的行為, 若你不希望JavaScript執行這些
+  預設的行為, 就使用 preventDefault來阻止這些行為.
+*/
+// var button = document.querySelector('button')
+// var div = document.querySelector('div')
+// button.addEventListener('contextmenu', function (e) {
+//   e.preventDefault()
+//   div.style.background = 'yellow'
+// })
+
+/**
+  # 3-25 Quiz 4
+  基於資訊安全需求, 密碼欄位通常會鎖右鍵來阻止使用者透過滑鼠來複製密碼,
+  請寫個程式讓密碼欄位對右鍵點擊毫無反應.
+*/
+
+/**
+  範例 5: 其他常用的滑鼠event
+*/
+// div.addEventListener('mouseenter', function (e) {
+//   console.log(e.type)
+// })
+
+// div.addEventListener('mousemove', function (e) {
+//   console.log(e.type)
+// })
+
+// div.addEventListener('mouseout', function (e) {
+//   console.log(e.type)
+// })
+
+/**
+  # 3-25 Quiz 5
+  請寫個程式完成以下任務:
+  當滑鼠游標移進div, 則button的字要變成綠色;
+  當滑鼠游標從div移出, 則button的字要變回紅色
+*/
+
+/**
+  範例 6: input event
+  使用者輸入文字時, 就會觸發此事件
+*/
+// var input = document.querySelector('input[type="text"]')
+// input.addEventListener('input', function (e) {
+//   console.log('e.type =', e.type)
+//   console.log('e.target.value =', e.target.value) // 目前input的最新內容
+// })
+
+/**
+  # 3-25 Quiz 6
+  我們都知道到台灣手機號碼只能是10碼, 且10碼都是數字
+  請寫一個程式完成以下需求:
+  只要input目前內容剛好是10碼數字, 則將input元素下方的`<p>號碼輸入錯誤</p>`隱藏起來;
+  反之, 只要input的內容不滿足 剛好10碼數字 的條件, 則要顯示`<p>號碼輸入錯誤</p>`
+*/
+// 參考答案:
+// var input = document.querySelector('input[type="text"]')
+// var p = document.querySelector('p')
+// input.addEventListener('input', function (e) {
+//   var numberMap = {
+//     '0': true,
+//     '1': true,
+//     '2': true,
+//     '3': true,
+//     '4': true,
+//     '5': true,
+//     '6': true,
+//     '7': true,
+//     '8': true,
+//     '9': true,
+//   }
+//   var value = e.target.value
+//   if (value.length === 10) {
+//     for (var i = 0; i < value.length; i++) {
+//       if (!numberMap[value[i]]) {
+//         p.style.display = 'block'
+//         return
+//       }
+//     }
+//     p.style.display = 'none'
+//   } else {
+//     p.style.display = 'block'
+//   }
+// })
+
+/**
+  在上個Quiz中, 你會發現以下3種使用者的動作(action), 都會觸發input event:
+  1. 直接用鍵盤輸入文字
+  2. 用滑鼠將已複製(copy)的文字貼上(paste)到input內.
+  3. 用滑鼠將input內的一段文字剪下(cut).
+
+  這就是為什麼我們要將使用者的action和觸發的event切開,
+  因為action和event本來就不一定要是同一件事, 許多不同的action可以觸發同一種event.
+  當然, 有些event本身代表一種實際的action, 例如click/mousedown/mouseup event.
+  在此我只是要強調, 使用者的action 和觸發的event不一定是同一件事.
+*/
+
+/**
+  範例 7: 常用的鍵盤event: keydown, keypress, keyup
+  1. keydown:
+    在鍵盤上的任何按鍵按下時觸發
+  2. keypress:
+    在鍵盤上的字元鍵按下時觸發, 也就是說若按下的是功能鍵則不會觸發
+    - 字元鍵就是按下後會在畫面上輸出字元符號的按鍵, 例如 a, b, c, 1, 2, 3 ...等
+    - 功能鍵就是按下後不會在畫面上輸出字元符號的按鍵, 例如 esc, ctrl, alt, backspace, 方向鍵 ...等
+  3. keyup:
+    在鍵盤上的任何按鍵放開時觸發
+
+  若keydown, keypress, keyup都有監聽, 則觸發的順序是 keydown -> keypress -> keyup,
+
+  和按鍵相關的資訊都可以從觸發後的event object中取得.
+*/
+
+// 給讀者看5個case: 1, shft+1,  a, shift+1, ctrl
+// var input = document.querySelector('input[type="text"]')
+// var events = ['keydown', 'keypress', 'keyup']
+// for (var i = 0; i < events.length; i++) {
+//   input.addEventListener(events[i], function (e) {
+//     console.log('=========================')
+//     console.log('[事件名稱] e.type =', e.type)
+//     console.log('[按鍵名稱] e.code =', e.code) // 按鍵名稱, 要用 字元鍵 和 功能鍵的照片來輔助; 功能鍵上只會寫功能, 因此功能即是它的按鍵名稱; 但字元鍵上面會有比較多符號, 瀏覽器要怎麼為字元鍵取按鍵名稱呢? 答案是會以按鍵上面的西方標準英數標點符號來命名.
+//     console.log('[輸出符號] e.key  =', e.key) // 若按的是功能鍵, 因為功能鍵不會真的在畫面上輸出文字, 因此輸出符號的值僅代表功能名稱, 
+//     if (e.type === 'keypress') {
+//       console.log('[符號代碼] e.keyCode =', e.keyCode)
+//     } else {
+//       console.log('[按鍵代碼] e.keyCode =', e.keyCode)
+//     }
+//     console.log('[input的內容] e.target.value  =', e.target.value)
+//   })
+// }
+/**
+  小整理:
+  1. 關於 [input的內容] e.target.value:
+     - keyup看到的都是最新內容
+     - keydown和keypress看到的都是舊內容(還沒按下按鍵前的內容).
+  2. e.code 在 keydown / keypress / keyup 中 都是一樣的.
+  3. e.key 在 keydown / keypress / keyup 中 都是一樣的.
+  4. e.keyCode在不同event中的值可能會不一樣, 原因是:
+     - 在keypress事件中, e.keyCode 的值 代表 符號代碼, 這個代碼是一個對應到輸出符號(e.key)的編號
+       (英數標點符號請參考ASCII表 https://zh.wikipedia.org/wiki/ASCII).
+     - 在keydown 和 keyup事件中, e.keyCode 的值 代表 按鍵代碼, 這個代碼是一個對應到按鍵名稱(e.code)的編號.
+       (實際上, 按鍵代碼也是參考ASCII來編的)
+*/
+
+/**
+  接著再給讀者看這幾個例外: 剛剛講的只是大原則, 實際上的有一些例外 (甚至, 可能有很多例外)
+  1. 我不可能展示所有例外, 在此只舉一些代表性的
+    (直接用上個範例的code, 然後按鍵case為: 1. tab, 2. capslock, 3. enter, 4. 中文輸入法的按鍵a
+  2. 上個範例是在Chrome上展示, 今天如果換成firefox, event中帶有的按鍵資訊可能會差很多,
+     讀者們日後寫code, 只要對行為不確定, 其實你就自己把這些屬性印出來看看, 很多問題就可迎刃而解.
+*/
+
+/**
+  # 3-25 Quiz 7
+  基於個資法, 個人資料不允許任意複製; 請寫出一個程式達成以下需求
+  1. 電話欄位的內容不允許使用鍵盤複製和剪下 (不論作業系統是windows或mac都不允許)
+  2. 電話欄位的內容不允許使用滑鼠右鍵進行複製和剪下.
+
+  windows的複製為 ctrl + c
+  windows的剪下為 ctrl + x
+  mac的複製為 cmd + c
+  mac的剪下為 cmd + x
+
+  為方便解題, 列出所有按鍵的keyCode:
+  ctrl按鍵 -> 17
+  cmd按鍵 -> 91
+  c按鍵 -> 67
+  x按鍵 -> 88
+*/
+// var input = document.querySelector('input[type="text"]')
+// var ctrlKey = 17 // ctrl keyCode for Windows
+// var cmdKey = 91 // cmd keyCode for Mac
+// var cKey = 67 // keyCode for 'c' character
+// var xKey = 88 // keyCode for 'x' character
+// var state = { isCtrlOrCmdDown: false }
+// input.addEventListener('keydown', function (e) {
+//   if (e.keyCode === ctrlKey || e.keyCode === cmdKey) {
+//     state.isCtrlOrCmdDown = true
+//   }
+//   if (state.isCtrlOrCmdDown && (e.keyCode === cKey || e.keyCode === xKey)) {
+//     e.preventDefault()
+//   }
+// })
+// input.addEventListener('keyup', function (e) {
+//   if (e.keyCode === ctrlKey || e.keyCode === cmdKey) {
+//     state.isCtrlOrCmdDown = false
+//   }
+// })
+// input.addEventListener('contextmenu', function (e) {
+//   e.preventDefault()
+// })
+
+/**
+  範例 8: Event bubble up, event像氣泡, 會往DOM tree的上方(根節點) 浮出.
+  若body和button都監聽click event, 當button被點擊時會怎麼樣呢? 當body被點擊時會怎麼樣呢?
+  (搭配DOM tree圖解釋)
+
+  event.target => 觸發事件的DOM
+  event.currentTarget => 正在處理事件的DOM
+*/
+// var body = document.body
+// var button = document.querySelector('button')
+// body.addEventListener('click', function (e) {
+//   console.log('======event bubble in body======')
+//   console.log('e.currentTarget', e.currentTarget)
+//   console.log('e.target =', e.target)
+// })
+// button.addEventListener('click', function (e) {
+//   console.log('======event bubble in button======')
+//   console.log('e.currentTarget', e.currentTarget)
+//   console.log('e.target =', e.target)
+// })
+
+/**
+  # 3-25 Quiz 8
+  請執行以下程式:
+  ```
+  var body = document.body
+  var ul = document.querySelector('ul')
+  var li = document.querySelector('li')
+  ul.style.position = 'relative'
+  ul.style.width = '100px'
+  ul.style.background = 'yellow'
+  li.style.position = 'absolute'
+  li.style.top = '0'
+  li.style.right = '-200px'
+  function showEvent(e) {
+    console.log('Here is', e.currentTarget.tagName, '.')
+    console.log('e.target.tagName =', e.target.tagName)
+  }
+  body.addEventListener('click', showEvent)
+  ul.addEventListener('click', showEvent)
+  li.addEventListener('click', showEvent)
+  ```
+  程式執行後, 請問
+  1. 若下來你在畫面上點擊"Cafe", 請問console會印出什麼? 為什麼?
+  2. 若下來你在畫面上點擊"Tea", 請問console會印出什麼? 為什麼?
+*/
+
+/**
+  範例 9: 如何防止event bubble up?
+*/
+// var body = document.body
+// var button = document.querySelector('button')
+// body.addEventListener('click', function (e) {
+//   console.log('Here is body.', e.target)
+// })
+// button.addEventListener('click', function (e) {
+//   e.stopPropagation()
+//   console.log('Here is button.', e.target)
+// })
+
+/**
+  # 3-25 Quiz 9
+  請執行以下程式:
+  ```
+  var body = document.body
+  var ul = document.querySelector('ul')
+  var lis = document.querySelectorAll('li')
+  var firstLi = lis[0]
+  var secondLi = lis[1]
+  function showEvent(e) {
+    console.log('Here is', e.currentTarget.tagName, '.')
+    console.log('e.target.tagName =', e.target.tagName)
+  }
+  function showEventWithStop(e) {
+    e.stopPropagation()
+    showEvent(e)
+  }
+
+  body.addEventListener('click', showEvent)
+  ul.addEventListener('click', showEvent)
+  firstLi.addEventListener('click', showEvent)
+  secondLi.addEventListener('click', showEventWithStop)
+  ```
+  程式執行後, 請問
+  1. 若下來你在畫面上點擊"Cafe", 請問console會印出什麼? 為什麼?
+  2. 若下來你在畫面上點擊"Tea", 請問console會印出什麼? 為什麼?
+*/
+
+/**
+  範例 10: Event delegation, 利用bubble up特性, 我們可以利用事件代理減少記憶體用量.
+*/
+// 不使用delegation:
+// var lis = document.querySelectorAll('li')
+// function showContent(e) {
+//   console.log(e.target.textContent)
+// }
+// for (var i = 0; i < lis.length; i++) {
+//   lis[i].addEventListener('click', showContent)
+// }
+
+// 使用delegation:
+// var ul = document.querySelector('ul')
+// function showContent(e) {
+//   if (e.target.tagName === 'LI') {
+//     console.log(e.target.textContent)
+//   }
+// }
+// ul.addEventListener('click', showContent)
+
+/**
+  # 3-25 Quiz 10
+  請寫個程式滿足以下需求
+  1. 點擊ul 內的 li, li的字會變成紅色
+  2. 畫面上最多只能有一個li是紅色
+  3. li不可監聽任何event
+*/
+
+</script>
+</body>
+</html>

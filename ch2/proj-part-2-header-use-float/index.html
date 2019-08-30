@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>光速買</title>
+    <style>
+      
+      * {
+        margin: 0;
+        padding: 0;
+        font-family: sans-serif;
+        color: #444444;
+        box-sizing: border-box;
+      }
+
+      h1 {
+        font-size: 32px;
+        margin: 12px 20px;
+      }
+
+      p {
+        font-size: 50px;
+        padding: 50px 0 0 0; 
+        color: white;
+      }
+
+			input {
+				border: 1px solid #999999;
+				padding: 10px;
+				font-size: 18px;
+        height: 43px;
+        margin-top: 12px;
+			}
+
+			input[type="text"] {
+        border-radius: 4px 0 0 4px;
+        border-right: none;
+      }
+
+			input[type="button"] {
+        border-radius: 0 4px 4px 0;
+				border: 0;
+				background: rgb(233, 30, 99);
+				color: white;
+			}
+
+      nav ul li {
+        margin: 12px 20px;
+        line-height: 45px;
+        list-style-type: none;
+        font-size: 20px;
+      }
+
+      .block-left {
+        display: block;
+        float: left;
+      }
+
+      .main-top-fig {
+        width: 100%;
+        height: 600px;
+        text-align: center;
+        background: url("../imgs/top-bg.jpg");
+        background-size: cover;
+        background-position: 0 -200px;
+      }
+
+      .row {
+        width: 100%;
+      }
+
+      .right {
+        float: right
+      }
+
+    </style>
+  </head>
+  <body>
+    <header class="row">
+      <h1 class="block-left">光速買</h1>
+      <input class="block-left" type="text" placeholder="想買什麼？" />
+      <input class="block-left" type="button" value="搜尋" />
+      <nav class="right">
+        <ul>
+          <li class="block-left">時尚流行</li>
+          <li class="block-left">生活家居</li>
+          <li class="block-left">酷炫科技</li>
+          <li class="block-left">美味零食</li>
+        </ul>
+      </nav>
+    </header>
+    <main class="row">
+      <div class="main-top-fig block-left">
+        <p>馬上買，現在就買！</p>
+      </div>
+    </main>
+  </body>
+</html>
+

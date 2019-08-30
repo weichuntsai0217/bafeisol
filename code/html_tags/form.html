@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <style>
+      body { padding: 30px }
+    </style>
+  </head>
+  <body>
+    <form>
+      我是form，嚴格來說是整個表單的外皮。
+      <br /> <!-- <br>用來強迫換行 -->
+      <br />
+      請輸入姓名: <input type="text" name="my_name" placeholder="請輸入文字" />
+      <br />
+      <br />
+      請輸入密碼: <input type="password" name="my_password" placeholder="請輸入密碼" />
+      <br />
+      <br />
+      請輸入email: <input type="email" name="my_email" placeholder="例如: abc@gmail.com" />
+      <br />
+      <br />
+      請選擇要上傳的檔案: <input type="file" name="my_file" />
+      <br />
+      <br />
+      請選擇你喜歡的顏色（可複選）:
+      <input type="checkbox" name="color" value="black" />黑色
+      <input type="checkbox" name="color" value="white" />白色
+      <input type="checkbox" name="color" value="yellow" />黃色
+      <br />
+      <br />
+      請選擇你的年齡區間:
+      <input type="radio" name="age" value="0_to_18" />18歲以下
+      <input type="radio" name="age" value="19_to_40" />19 ~ 40歲
+      <input type="radio" name="age" value="41_and_above" />41歲以上
+      <br />
+      <br />
+      請選擇你的交通工具:
+      <select name="transportation">
+        <option value="walk">步行</option>
+        <option value="scooter">機車</option>
+        <option value="car">汽車</option>
+        <option value="bus">公車</option>
+        <option value="mrt">捷運</option>
+        <option value="airplane">飛機</option>
+      </select>
+      <br />
+      <br />
+      請留下您寶貴的建議:<br />
+      <textarea>我是textarea，用來輸入比較長的一段文字</textarea>
+      <br />
+      <br />
+      <button type="button">我是button，代表按鈕</button>
+      <br />
+      <br />
+      <input type="button" value="我也是個button" >
+    </form>
+  </body>
+</html>
+

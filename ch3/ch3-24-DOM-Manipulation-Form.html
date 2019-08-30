@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+</head>
+<body>
+
+<form>
+  <br />
+  請輸入姓名: <input type="text" name="my_name" placeholder="請輸入文字" value="Jimmy" />
+  <br />
+  <br />
+  請輸入密碼: <input type="password" name="my_password" placeholder="請輸入密碼" value="abc123" />
+  <br />
+  <br />
+  請輸入email: <input type="email" name="my_email" placeholder="例如: abc@gmail.com" value="jimmy@gmail.com" />
+  <br />
+  <br />
+  請留下您寶貴的建議:<br />
+  <textarea name="suggestion">我建議你光速買</textarea>
+  <br />
+  <br />
+  請選擇你的交通工具:
+  <select name="transportation">
+    <option value="walk">步行</option>
+    <option value="scooter">機車</option>
+    <option value="car" selected>汽車</option>
+    <option value="bus">公車</option>
+    <option value="mrt">捷運</option>
+    <option value="airplane">飛機</option>
+  </select>
+  <br />
+  <br />
+  請選擇你喜歡的顏色（可複選）:
+  <input type="checkbox" name="color" value="black" checked />黑色
+  <input type="checkbox" name="color" value="white" />白色
+  <input type="checkbox" name="color" value="yellow" checked />黃色
+  <input type="checkbox" name="color" value="red" />紅色
+  <br />
+  <br />
+  請選擇你的年齡區間:
+  <input type="radio" name="age" value="0_to_18" />18歲以下
+  <input type="radio" name="age" value="19_to_40" checked />19 ~ 40歲
+  <input type="radio" name="age" value="41_and_above" />41歲以上
+  <br />
+  <br />
+</form>
+
+<script>
+'use strict'
+/**
+  # 3-24 DOM Manipulation for Form
+  表單元素值的存取
+*/
+
+/**
+  # 範例 1: 印出 type="text", type="password", type="email" 的name 和 value
+*/
+// var text = document.querySelector('input[type="text"]')
+// console.log(text.name, '=', text.value)
+// text.value = 'Alice' // 改變'input[type="text"]'的值
+// console.log(text.name, '=', text.value)
+
+// var password = document.querySelector('input[type="password"]')
+// console.log(password.name, '=', password.value)
+
+// var email = document.querySelector('input[type="email"]')
+// console.log(email.name, '=', email.value)
+/**
+  # 3-24 Quiz 1 (請搭配本節使用的html)
+  請將email的value值改成'xyz@hotmail.com'
+*/
+
+/**
+  # 範例 2: 印出 textarea 的name 和 value
+*/
+// var area = document.querySelector('textarea')
+// console.log(area.name, '=', area.value)
+/**
+  # 3-24 Quiz 2 (請搭配本節使用的html)
+  若想將範例2的 textarea 的value值改成'請你趕快買!', 猜猜看要怎麼做呢 (回想一下Quiz 1)?
+*/
+
+/**
+  # 範例 3: 印出 select 的name 和 所有option的value, 若option有被選中請標註'已選中'
+*/
+// var select = document.querySelector('select')
+// console.log(select.name, '的選項有:')
+
+// var options = select.children
+// for (var i = 0; i < options.length; i++) {
+//   if (options[i].selected === true) {
+//     console.log(options[i].value, '已選中')
+//   } else {
+//     console.log(options[i].value)
+//   }
+// }
+/**
+  # 3-24 Quiz 3 (請搭配本節使用的html)
+  請將範例 3改成只印出有被勾選的option的文字內容 
+*/
+
+/**
+  # 範例 4: 將option被選中的項目改成value為'mrt'的option
+*/
+// var options = document.querySelectorAll('option')
+// for (var i = 0; i < options.length; i++) {
+//   if (options[i].value === 'mrt') {
+//     options[i].selected = true
+//     break
+//   }
+// }
+/**
+  因為select元素用在單選題, 只要有某個選項的selected屬性被設定成true,
+  其他選項的selected自動會變成false, 你不用特別把原本true的項目設定成false
+*/
+
+/**
+  # 3-24 Quiz 4 (請搭配本節使用的html)
+  承範例4, 將option被選中的項目改成文字內容為'飛機'的option
+*/
+
+/**
+  # 範例 5:
+  (a). 印出 所有checkbox 共有的name 和 所有的值,
+       若值有被選中請標註'已勾選', 否則標注'未勾選';
+  (b). 請將value為'red'的選項也打勾
+*/
+// (a) 小題
+// var chks = document.querySelectorAll('input[type="checkbox"]')
+// console.log(chks[0].name, '的選項有:')
+// for (var i = 0; i < chks.length; i++) {
+//   if (chks[i].checked === true) {
+//     console.log(chks[i].value, '已勾選')  
+//   } else {
+//     console.log(chks[i].value, '未勾選')
+//   }
+// }
+
+// (b) 小題
+// var chks = document.querySelectorAll('input[type="checkbox"]')
+// for (var i = 0; i < chks.length; i++) {
+//   if (chks[i].value === 'red') {
+//     chks[i].checked = true
+//   }
+// }
+
+/**
+  # 3-24 Quiz 5 (請搭配本節使用的html)
+  請將白色和紅色打勾, 但黑色和黃色不打勾.
+*/
+
+/**
+  # 範例 6: 請在Query DOM時就直接將已勾選的checkbox選出來, 然後印出選中的value
+*/
+// var checkedChks = document.querySelectorAll('input[type="checkbox"][checked]')
+// for (var i = 0; i < checkedChks.length; i++) {
+//   console.log(checkedChks[i].value)
+// }
+/**
+  # 3-24 Quiz 6 (請搭配本節使用的html)
+  請將範例6改成只印出有被勾選的checkbox其對應的文字內容
+  (提示: 觀察一下html結構, 你要用 nextElementSibling 還是 nextSibling呢?)
+*/
+
+/**
+  # 範例 7: 印出 所有radio 共有的name 和 所有的值, 若值有被選中請標註'已勾選'
+*/
+// var radios = document.querySelectorAll('input[type="radio"]')
+// console.log(radios[0].name, '的選項有:')
+// for (var i = 0; i < radios.length; i++){
+//   if (radios[i].checked === true) {
+//     console.log(radios[i].value, '已勾選')  
+//   } else {
+//     console.log(radios[i].value)
+//   } 
+// }
+
+/**
+  # 3-24 Quiz 7 (請搭配本節使用的html)
+  請將選項"41歲以上"打勾, 但其他選項不打勾
+  (提示: 因為radio元素用在單選題, 只要有某個選項的checked屬性被設定成true,
+  其他選項的checked自動會變成false, 你不用特別把原本true的項目設定成false)
+*/
+
+/**
+  # 範例 8: 請在Query DOM時就直接將已勾選的radio選出來, 然後印出選中的value
+*/
+// var checkedRadios = document.querySelectorAll('input[type="radio"][checked]')
+// for (var i = 0; i < checkedRadios.length; i++){
+//   console.log(checkedRadios[i].value)
+// }
+/**
+  # 3-24 Quiz 8 (請搭配本節使用的html)
+  請將範例8改成只印出有被勾選的radio其對應的文字內容
+  (提示: 觀察一下html結構, 你要用 nextElementSibling 還是 nextSibling呢?)
+*/
+
+</script>
+</body>
+</html>

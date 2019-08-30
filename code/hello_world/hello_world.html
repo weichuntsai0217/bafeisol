@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>我的個人網站</title>
+    <style>
+      body {
+        text-align: center;
+        background: black;
+        color: white;
+        font-family: helvetica;
+      }
+      /*
+      隨堂作業：請讀者將<p>的字體大小變大
+      */
+
+      button {
+        font-size: 20px;
+        background: #1f8dd6;
+        /*
+        color: #fff;
+        */
+        /*
+        隨堂作業：讓讀者把上面color的註解取消掉，看會發生什麼事，並解釋為什麼
+        */
+        border: 1px solid #1f8dd6;
+        border-radius: 3px;
+        margin: 20px 0 0 0;
+        padding: 5px 10px 5px 10px;
+        /* 跟讀者解釋上面這行和下面這行兩種寫法的差異
+        padding: 5px 10px;
+        */
+        /*
+        隨堂作業：簡單比較一下margin和padding的差異
+        */
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Hello World!</h1>
+    <p>這是我的第一個網站</p>
+    <button type="button">猜猜我是誰</button>
+    <script>
+      let button = document.querySelector('button')
+      function showName(e) { alert('我是Jimmy Tsai!') }
+      /*
+      隨堂作業：讓讀者把名字改成他的名字
+      隨堂作業：讓讀者回憶解釋這3行code在做什麼
+      */
+      button.addEventListener('click', showName)
+    </script>
+  </body>
+</html>

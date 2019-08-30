@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>光速買</title>
+    <link href="../css/all.css" rel="stylesheet">
+    <link href="../css/main.css" rel="stylesheet">
+  </head>
+  <body>
+    <header class="row">
+      <div class="mobile-row">
+        <a href="#"><h1 class="block-left">光速買</h1></a>
+        <input class="block-left" type="text" placeholder="想買什麼？" />
+        <button class="block-left" type="button">搜尋</button>
+        <div id="mobile-menu-button" class="right">
+            <span></span>
+        </div>
+      </div>
+      <nav class="right mobile-row">
+        <ul>
+          <li class="block-left shopping-cart-wrapper" js-dom="cart">
+            <i class="fas fa-shopping-cart"></i>
+            <span class="quantity" js-dom="cart-quantity">0</span>
+          </li>
+          <li class="block-left"><a href="#">時尚流行</a></li>
+          <li class="block-left"><a href="#">美食饗宴</a></li>
+        </ul>
+      </nav>
+    </header>
+    <div class="fake-header"></div>
+    <main class="row product-view">
+      <div class="row sub-block">
+        <h2 class="row" js-dom="title">濃湯調理包1</h2>
+        <div class="row price-wrapper">
+          <span class="price" js-dom="price">NT$100</span><strike class="original-price">NT$200</strike>
+        </div>
+        <div class="col-9-24">
+          <div class="col-1-4 select-wrapper">
+            <select name="quantity" dir="rtl" js-dom="select">
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+              <option value="10">10</option>
+            </select>
+          </div>
+          <div class="col-3-4">
+            <button class="row" type="button" js-dom="confirm-quantity">加入購物車</button>
+          </div>
+        </div>
+      </div>
+      <div class="row sub-block top-border">
+        <h3 class="row">商品規格</h3>
+        <div class="row item-group">
+          <div class="col-1-6">
+            商品型號
+          </div>
+          <div class="col-5-6" js-dom="id">
+            QAZ001
+          </div>
+        </div>
+        <div class="row item-group">
+          <div class="col-1-6">
+            廠商名稱
+          </div>
+          <div class="col-5-6">
+            光速好食有限公司
+          </div>
+        </div>
+        <div class="row item-group">
+          <div class="col-1-6">
+            製造日期
+          </div>
+          <div class="col-5-6">
+            2019-07-01
+          </div>
+        </div>
+        <div class="row item-group">
+          <div class="col-1-6">
+            賞味期限
+          </div>
+          <div class="col-5-6">
+            2020-07-01
+          </div>
+        </div>
+        <div class="row item-group">
+          <div class="col-1-6">
+            容量
+          </div>
+          <div class="col-5-6">
+            56.3g
+          </div>
+        </div>
+        <div class="row item-group">
+          <div class="col-1-6">
+            成份
+          </div>
+          <div class="col-5-6">
+            玉米,馬鈴薯澱粉,糖,麥芽糊精,鹽,蔬菜粉(玉米、香菇、蕃茄),磷酸二澱粉,棕櫚油,酵母精粉,香料,紅蘿蔔,調味劑(5'-次黃嘌呤核?磷酸二鈉、5'-鳥嘌呤核?磷酸二鈉,檸檬酸,琥珀酸二鈉),天然香辛料(芥末、薑黃),香菜,乳酸鈣,維生素E,維生素A,檸檬酸鐵,維生素B2
+          </div>
+        </div>
+        <div class="row item-group">
+          <div class="col-1-6">
+            原產地
+          </div>
+          <div class="col-5-6">
+            台灣
+          </div>
+        </div>
+      </div>
+      <div class="row sub-block top-border">
+        <h3 class="row">商品其他資訊</h3>
+        <p class="row">我是濃湯調理包1，清爽健康不油膩，大家都說讚！</p>
+        <div class="row" js-dom="img-list">
+          <div class="col-1-2 smart-grid-padding">
+            <img src="../imgs/item.jpg">
+          </div>
+          <div class="col-1-2 smart-grid-padding">
+            <img src="../imgs/item.jpg">
+          </div>
+          <div class="col-1-2 smart-grid-padding">
+            <img src="../imgs/item.jpg">
+          </div>
+          <div class="col-1-2 smart-grid-padding">
+            <img src="../imgs/item.jpg">
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <div class="overlay" js-dom="overlay">
+      <div class="dialog-wrapper">
+        <div class="dialog">
+          <div class="row sub-block">
+            <h2>我的訂單</h2>
+          </div>
+          <div class="row sub-block top-border">
+            <h3 class="row">訂單總計</h3>
+            <div class="row item-group">
+              <div class="col-1-6">
+                數量總計
+              </div>
+              <div class="col-5-6 total-quantity" js-dom="dialog-total-quantity">
+                0
+              </div>
+            </div>
+            <div class="row item-group">
+              <div class="col-1-6">
+                金額總計
+              </div>
+              <div class="col-5-6 total-price">
+                NT$<span js-dom="dialog-total-price">0</span>
+              </div>
+            </div>
+          </div>
+          <div class="row sub-block top-border">
+            <h3 class="row">聯絡人資訊</h3>
+            <form class="row">
+              <div class="row item-group">
+                <label class="col-1-6" for="name">
+                  姓名
+                </label>
+                <div class="col-5-6">
+                  <input class="block-left" type="text" name="name" id="name" />
+                </div>
+              </div>
+              <div class="row item-group">
+                <label class="col-1-6" for="mobile">
+                  手機號碼
+                </label>
+                <div class="col-5-6">
+                  <input class="block-left" type="text" name="mobile" id="mobile" />
+                </div>
+              </div>
+              <div class="row item-group">
+                <label class="col-1-6" for="email">
+                  電子信箱
+                </label>
+                <div class="col-5-6">
+                  <input class="row" type="text" name="email" id="email" />
+                </div>
+              </div>
+              <div class="row item-group">
+                <label class="col-1-6" for="address">
+                  收貨地址
+                </label>
+                <div class="col-5-6">
+                  <input class="row" type="text" name="address" id="address" />
+                </div>
+              </div>
+              <div class="row item-group">
+                <label class="col-1-6" for="credit_card_1">
+                  信用卡號
+                </label>
+                <div class="col-5-6">
+                  <input class="block-left sm-size" type="text" name="credit_card_1" id="credit_card_1" />
+                  <input class="block-left sm-size" type="text" name="credit_card_2" id="credit_card_2" />
+                  <input class="block-left sm-size" type="text" name="credit_card_3" id="credit_card_3" />
+                  <input class="block-left sm-size" type="text" name="credit_card_4" id="credit_card_4" />
+                </div>
+              </div>
+              <div class="row item-group">
+                <label class="col-1-6" for="credit_card_sec">
+                  信用卡安全碼
+                </label>
+                <div class="col-5-6">
+                  <input class="block-left sm-size" type="text" name="credit_card_sec" id="credit_card_sec" />
+                </div>
+              </div>
+              <div class="row item-group">
+                <label class="col-1-6" for="credit_card_expire_month">
+                  信用卡有效期限
+                </label>
+                <div class="col-5-6">
+                  <input class="block-left sm-size" type="text" name="credit_card_expire_month" id="credit_card_expire_month" placeholder="月份" />
+                  <input class="block-left sm-size" type="text" name="credit_card_expire_year" id="credit_card_expire_year" placeholder="年份" />
+                </div>
+              </div>
+              <div class="row item-group">
+                <div class="col-1-6">
+                  &nbsp;
+                </div>
+                <div class="col-1-6">
+                  <button class="row" type="button">確認付款</button>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="row sub-block top-border">
+            <h3 class="row">商品明細</h3>
+            <div class="row" js-dom="dialog-product-list">
+
+              <!-- <div class="col-1-3 smart-grid-padding">
+                <div class="card row" js-dom="dialog-product">
+                  <div class="card-image row">
+                    <img src="../imgs/item.jpg" js-dom="dialog-product-img">
+                  </div>
+                  <div class="card-content row">
+                    <div class="row key-info" js-dom="dialog-product-key-info">
+                      <p class="title">濃湯調理包1</p>
+                      <p class="price">NT$100</p>
+                      <p>QAZ001</p>
+                    </div>
+                    <div clas="row">
+                      <div class="col-1-3 select-wrapper">
+                        <select name="quantity" dir="rtl" js-dom="dialog-product-select">
+                          <option value="1">1</option>
+                          <option value="2">2</option>
+                          <option value="3">3</option>
+                          <option value="4">4</option>
+                          <option value="5">5</option>
+                          <option value="6">6</option>
+                          <option value="7">7</option>
+                          <option value="8">8</option>
+                          <option value="9">9</option>
+                          <option value="10">10</option>
+                        </select>
+                      </div>
+                      <div class="col-2-3">
+                        <button class="row" type="button" js-dom="dialog-product-delete">
+                          <i class="fas fa-trash-alt"></i>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div> -->
+
+            </div>
+          </div>
+        </div>
+        <button class="close circle" js-dom="close-dialog"><i class="fas fa-times"></i></button>
+      </div>
+    </div>
+
+    <script src="../js/main.js"></script>
+  </body>
+</html>
+

@@ -1,0 +1,108 @@
+<div class="overlay" js-dom="overlay">
+  <div class="dialog-wrapper">
+    <div class="dialog">
+      <div class="row sub-block">
+        <h2>我的訂單</h2>
+      </div>
+      <div class="row sub-block top-border">
+        <h3 class="row">訂單總計</h3>
+        <div class="row item-group">
+          <div class="col-1-6">
+            數量總計
+          </div>
+          <div class="col-5-6 total-quantity" js-dom="dialog-total-quantity">
+            0
+          </div>
+        </div>
+        <div class="row item-group">
+          <div class="col-1-6">
+            金額總計
+          </div>
+          <div class="col-5-6 total-price">
+            NT$<span js-dom="dialog-total-price">0</span>
+          </div>
+        </div>
+      </div>
+      <div class="row sub-block top-border">
+        <h3 class="row">聯絡人資訊</h3>
+        <form class="row" js-dom="order-form">
+          <div class="row item-group">
+            <label class="col-1-6" for="name">
+              姓名
+            </label>
+            <div class="col-5-6">
+              <input class="block-left" type="text" name="name" id="name" />
+            </div>
+          </div>
+          <div class="row item-group">
+            <label class="col-1-6" for="mobile">
+              手機號碼
+            </label>
+            <div class="col-5-6">
+              <input class="block-left" type="text" name="mobile" id="mobile" />
+            </div>
+          </div>
+          <div class="row item-group">
+            <label class="col-1-6" for="email">
+              電子信箱
+            </label>
+            <div class="col-5-6">
+              <input class="row" type="text" name="email" id="email" />
+            </div>
+          </div>
+          <div class="row item-group">
+            <label class="col-1-6" for="address">
+              收貨地址
+            </label>
+            <div class="col-5-6">
+              <input class="row" type="text" name="address" id="address" />
+            </div>
+          </div>
+          <div class="row item-group">
+            <label class="col-1-6" for="cardZone1">
+              信用卡號
+            </label>
+            <div class="col-5-6">
+              <input class="block-left sm-size" type="text" name="cardZone1" id="cardZone1" />
+              <input class="block-left sm-size" type="text" name="cardZone2" id="cardZone2" />
+              <input class="block-left sm-size" type="text" name="cardZone3" id="cardZone3" />
+              <input class="block-left sm-size" type="text" name="cardZone4" id="cardZone4" />
+            </div>
+          </div>
+          <div class="row item-group">
+            <label class="col-1-6" for="cardSec">
+              信用卡安全碼
+            </label>
+            <div class="col-5-6">
+              <input class="block-left sm-size" type="text" name="cardSec" id="cardSec" />
+            </div>
+          </div>
+          <div class="row item-group">
+            <label class="col-1-6" for="cardExpMonth">
+              信用卡有效期限
+            </label>
+            <div class="col-5-6">
+              <input class="block-left sm-size" type="text" name="cardExpMonth" id="cardExpMonth" placeholder="月份" />
+              <input class="block-left sm-size" type="text" name="cardExpYear" id="cardExpYear" placeholder="年份" />
+            </div>
+          </div>
+          <div class="row item-group">
+            <div class="col-1-6">
+              &nbsp;
+            </div>
+            <div class="col-1-6">
+              <button class="row" type="button" js-dom="confirm-payment">確認付款</button>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="row sub-block top-border">
+        <h3 class="row">商品明細</h3>
+        <div class="row" js-dom="dialog-product-list">
+          <!-- 請參考main.js的getDialogProductDom -->
+        </div>
+      </div>
+    </div>
+    <button class="close circle" js-dom="close-dialog"><i class="fas fa-times"></i></button>
+  </div>
+</div>

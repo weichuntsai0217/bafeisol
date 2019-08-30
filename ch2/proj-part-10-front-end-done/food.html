@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>光速買</title>
+    <link href="css/all.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
+  </head>
+  <body>
+    <header class="row">
+      <div class="mobile-row">
+        <h1 class="block-left"><a href="index.html">光速買</a></h1>
+        <input class="block-left" type="text" placeholder="想買什麼？" />
+        <button class="block-left" type="button" js-dom="search-button">搜尋</button>
+        <div id="mobile-menu-button" class="right">
+            <span></span>
+        </div>
+      </div>
+      <nav class="right mobile-row">
+        <ul>
+          <li class="block-left shopping-cart-wrapper" js-dom="cart">
+            <i class="fas fa-shopping-cart"></i>
+            <span class="quantity" js-dom="cart-quantity">0</span>
+          </li>
+          <li class="block-left"><a href="fashion.html">時尚流行</a></li>
+          <li class="block-left active"><a href="food.html">美食饗宴</a></li>
+        </ul>
+      </nav>
+    </header>
+    <div class="fake-header"></div>
+    <main class="row">
+      <div class="row top-fig food">
+        <h2>大口咬下，就是爽快！</h2>
+        <p>漢堡商品全館五折起，要買要快！</p>
+      </div>
+      <div class="row main-content">
+
+        <div class="col-1-4 smart-grid-padding">
+          <div class="card row" js-dom="product">
+            <a href="product-view.html" js-dom="product-link">
+              <div class="card-image row mask-wrapper">
+                <img src="imgs/food/food-01.jpg" js-dom="product-img">
+                <div class="mask">
+                  <button class="circle" js-dom="product-add">
+                    <i class="fas fa-plus"></i>
+                  </button>
+                </div>
+              </div>
+              <div class="card-content row">
+                <div class="row key-info" js-dom="product-key-info">
+                  <p class="title">香脆雞腿堡</p>
+                  <p class="price">NT$100</p>
+                  <p>FOOD01</p>
+                </div>
+                <div class="row">
+                  <p>我是香脆雞腿堡，多汁美味又酥脆，大家都說讚！</p>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="card row" js-dom="product">
+            <a href="product-view.html" js-dom="product-link">
+              <div class="card-image row mask-wrapper">
+                <img src="imgs/food/food-05.jpg" js-dom="product-img">
+                <div class="mask">
+                  <button class="circle" js-dom="product-add">
+                    <i class="fas fa-plus"></i>
+                  </button>
+                </div>
+              </div>
+              <div class="card-content row">
+                <div class="row key-info" js-dom="product-key-info">
+                  <p class="title">格紋鬆餅</p>
+                  <p class="price">NT$500</p>
+                  <p>FOOD05</p>
+                </div>
+                <div class="row">
+                  <p>我是格紋鬆餅，香甜可口又酥脆，大家都說讚！</p>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="col-1-4 smart-grid-padding">
+          <div class="card row" js-dom="product">
+            <a href="product-view.html" js-dom="product-link">
+              <div class="card-image row mask-wrapper">
+                <img src="imgs/food/food-02.jpg" js-dom="product-img">
+                <div class="mask">
+                  <button class="circle" js-dom="product-add">
+                    <i class="fas fa-plus"></i>
+                  </button>
+                </div>
+              </div>
+              <div class="card-content row">
+                <div class="row key-info" js-dom="product-key-info">
+                  <p class="title">高纖大麥片</p>
+                  <p class="price">NT$200</p>
+                  <p>FOOD02</p>
+                </div>
+                <div class="row">
+                  <p>我是高纖大麥片，清爽健康顧腸道，大家都說讚！</p>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="card row" js-dom="product">
+            <a href="product-view.html" js-dom="product-link">
+              <div class="card-image row mask-wrapper">
+                <img src="imgs/food/food-06.jpg" js-dom="product-img">
+                <div class="mask">
+                  <button class="circle" js-dom="product-add">
+                    <i class="fas fa-plus"></i>
+                  </button>
+                </div>
+              </div>
+              <div class="card-content row">
+                <div class="row key-info" js-dom="product-key-info">
+                  <p class="title">檸檬水果茶</p>
+                  <p class="price">NT$600</p>
+                  <p>FOOD06</p>
+                </div>
+                <div class="row">
+                  <p>我是檸檬水果茶，讓你盡情享受下午時光，大家都說讚！</p>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="col-1-4 smart-grid-padding">
+          <div class="card row" js-dom="product">
+            <a href="product-view.html" js-dom="product-link">
+              <div class="card-image row mask-wrapper">
+                <img src="imgs/food/food-03.jpg" js-dom="product-img">
+                <div class="mask">
+                  <button class="circle" js-dom="product-add">
+                    <i class="fas fa-plus"></i>
+                  </button>
+                </div>
+              </div>
+              <div class="card-content row">
+                <div class="row key-info" js-dom="product-key-info">
+                  <p class="title">薑汁啤酒</p>
+                  <p class="price">NT$300</p>
+                  <p>FOOD03</p>
+                </div>
+                <div class="row">
+                  <p>我是薑汁啤酒，清涼有勁超爽快，大家都說讚！</p>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="col-1-4 smart-grid-padding">
+          <div class="card row" js-dom="product">
+            <a href="product-view.html" js-dom="product-link">
+              <div class="card-image row mask-wrapper">
+                <img src="imgs/food/food-04.jpg" js-dom="product-img">
+                <div class="mask">
+                  <button class="circle" js-dom="product-add">
+                    <i class="fas fa-plus"></i>
+                  </button>
+                </div>
+              </div>
+              <div class="card-content row">
+                <div class="row key-info" js-dom="product-key-info">
+                  <p class="title">精緻雞腿便當</p>
+                  <p class="price">NT$400</p>
+                  <p>FOOD04</p>
+                </div>
+                <div class="row">
+                  <p>我是精緻雞腿便當，料多實在又新鮮，大家都說讚！</p>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </main>
+
+    <div class="overlay" js-dom="overlay">
+      <div class="dialog-wrapper">
+        <div class="dialog">
+          <div class="row sub-block">
+            <h2>我的訂單</h2>
+          </div>
+          <div class="row sub-block top-border">
+            <h3 class="row">訂單總計</h3>
+            <div class="row item-group">
+              <div class="col-1-6">
+                數量總計
+              </div>
+              <div class="col-5-6 total-quantity" js-dom="dialog-total-quantity">
+                0
+              </div>
+            </div>
+            <div class="row item-group">
+              <div class="col-1-6">
+                金額總計
+              </div>
+              <div class="col-5-6 total-price">
+                NT$<span js-dom="dialog-total-price">0</span>
+              </div>
+            </div>
+          </div>
+          <div class="row sub-block top-border">
+            <h3 class="row">聯絡人資訊</h3>
+            <form class="row">
+              <div class="row item-group">
+                <label class="col-1-6" for="name">
+                  姓名
+                </label>
+                <div class="col-5-6">
+                  <input class="block-left" type="text" name="name" id="name" />
+                </div>
+              </div>
+              <div class="row item-group">
+                <label class="col-1-6" for="mobile">
+                  手機號碼
+                </label>
+                <div class="col-5-6">
+                  <input class="block-left" type="text" name="mobile" id="mobile" />
+                </div>
+              </div>
+              <div class="row item-group">
+                <label class="col-1-6" for="email">
+                  電子信箱
+                </label>
+                <div class="col-5-6">
+                  <input class="row" type="text" name="email" id="email" />
+                </div>
+              </div>
+              <div class="row item-group">
+                <label class="col-1-6" for="address">
+                  收貨地址
+                </label>
+                <div class="col-5-6">
+                  <input class="row" type="text" name="address" id="address" />
+                </div>
+              </div>
+              <div class="row item-group">
+                <label class="col-1-6" for="credit_card_1">
+                  信用卡號
+                </label>
+                <div class="col-5-6">
+                  <input class="block-left sm-size" type="text" name="credit_card_1" id="credit_card_1" />
+                  <input class="block-left sm-size" type="text" name="credit_card_2" id="credit_card_2" />
+                  <input class="block-left sm-size" type="text" name="credit_card_3" id="credit_card_3" />
+                  <input class="block-left sm-size" type="text" name="credit_card_4" id="credit_card_4" />
+                </div>
+              </div>
+              <div class="row item-group">
+                <label class="col-1-6" for="credit_card_sec">
+                  信用卡安全碼
+                </label>
+                <div class="col-5-6">
+                  <input class="block-left sm-size" type="text" name="credit_card_sec" id="credit_card_sec" />
+                </div>
+              </div>
+              <div class="row item-group">
+                <label class="col-1-6" for="credit_card_expire_month">
+                  信用卡有效期限
+                </label>
+                <div class="col-5-6">
+                  <input class="block-left sm-size" type="text" name="credit_card_expire_month" id="credit_card_expire_month" placeholder="月份" />
+                  <input class="block-left sm-size" type="text" name="credit_card_expire_year" id="credit_card_expire_year" placeholder="年份" />
+                </div>
+              </div>
+              <div class="row item-group">
+                <div class="col-1-6">
+                  &nbsp;
+                </div>
+                <div class="col-1-6">
+                  <button class="row" type="button" js-dom="confirm-payment">確認付款</button>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="row sub-block top-border">
+            <h3 class="row">商品明細</h3>
+            <div class="row" js-dom="dialog-product-list">
+              <!-- 請參考main.js的getDialogProductDom -->
+            </div>
+          </div>
+        </div>
+        <button class="close circle" js-dom="close-dialog"><i class="fas fa-times"></i></button>
+      </div>
+    </div>
+    <script src="js/common.js"></script>
+    <script src="js/mainpages.js"></script>
+  </body>
+</html>
+

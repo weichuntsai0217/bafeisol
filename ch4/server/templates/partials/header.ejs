@@ -1,0 +1,34 @@
+<header class="row">
+  <div class="mobile-row">
+    <h1 class="block-left"><a href="/">光速買</a></h1>
+    <input
+      class="block-left"
+      type="text"
+      placeholder="想買什麼？"
+      js-dom="search-condition"
+      value="<%= condition %>"
+    />
+    <button class="block-left" type="button" js-dom="search-button">搜尋</button>
+    <div id="mobile-menu-button" class="right">
+        <span></span>
+    </div>
+  </div>
+  <nav class="right mobile-row">
+    <ul>
+      <li class="block-left shopping-cart-wrapper" js-dom="cart">
+        <i class="fas fa-shopping-cart"></i>
+        <span class="quantity" js-dom="cart-quantity">0</span>
+      </li>
+      <% if (page === 'fashion') { %>
+      <li class="block-left active"><a href="/fashion">時尚流行</a></li>
+      <% } else { %>
+      <li class="block-left"><a href="/fashion">時尚流行</a></li>
+      <% } %>
+      <% if (page === 'food') { %>
+      <li class="block-left active"><a href="/food">美食饗宴</a></li>
+      <% } else { %>
+      <li class="block-left"><a href="/food">美食饗宴</a></li>
+      <% } %>
+    </ul>
+  </nav>
+</header>

@@ -1,0 +1,39 @@
+<!--
+1. 所有的type要挖空，讓讀者填填看
+2. 讓讀者加加看disabled，看會如何
+3. 讓讀者練習加required屬性，看有required屬性的input若沒輸入值，按下submit按鈕會如何
+-->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <style>
+      body { padding: 30px }
+    </style>
+  </head>
+  <body>
+    <h1>Jimmy網路商城</h1>
+    <h2>會員註冊</h2>
+    <form>
+      帳號: <input type="text" name="account" placeholder="您的帳號" /><br />
+      密碼: <input type="password" name="pwd" placeholder="您的密碼" /><br />
+      確認密碼: <input type="password" name="confirm_pwd" placeholder="請確認您的密碼" /><br />
+      電子郵件: <input type="email" name="email" /><br />
+      <br />
+      您是從何處得知本網站（可複選）:<br />
+      <input type="checkbox" name="from" value="friends"/>朋友介紹<br />
+      <input type="checkbox" name="from" value="tv"/>電視廣告<br />
+      <input type="checkbox" name="from" value="online_adv"/>網路廣告<br />
+      <br />
+      您使用網路購物的頻率大約是（單選）:<br />
+      <input type="radio" name="freq" value="never"/>從沒使用過<br />
+      <input type="radio" name="freq" value="low"/>每2個月1次<br />
+      <input type="radio" name="freq" value="normal"/>每1個月1次<br />
+      <input type="radio" name="freq" value="high"/>每1週1次<br />
+      <br />
+      <button type="submit">確認送出</button> <!-- 請讀者將button放在form外面，看點button會有什麼反應 -->
+    </form>
+  </body>
+</html>
+

@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>光速買</title>
+    <link href="../css/all.css" rel="stylesheet">
+    <style>
+      
+      * {
+        margin: 0;
+        padding: 0;
+        font-family: sans-serif;
+        box-sizing: border-box;
+      }
+
+      body {
+        background: #f4f4f4;
+        color: #57585a;
+      }
+
+      header {
+        background: #fff;
+      }
+
+      h1 {
+        font-size: 32px;
+        margin: 12px 20px;
+      }
+
+			input {
+				border: 1px solid #999999;
+				padding: 10px;
+				font-size: 18px;
+        height: 43px;
+        margin-top: 12px;
+			}
+
+			input[type="text"] {
+        border-radius: 4px 0 0 4px;
+        border-right: none;
+      }
+
+			input[type="button"] {
+        border-radius: 0 4px 4px 0;
+				border: 0;
+				background: rgb(233, 30, 99);
+				color: white;
+			}
+
+      ul li {
+        list-style-type: none;
+      }
+
+      nav ul li {
+        margin: 12px 20px;
+        line-height: 45px;
+        font-size: 20px;
+      }
+
+      img {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+
+      .sub-heading-wrapper {
+        text-align: center;
+        color: #fff;
+        padding: 30px;
+        background: -webkit-linear-gradient(0deg, rgb(251, 176, 30), rgb(229, 2, 18), rgb(192, 6, 156));
+        box-shadow: 0 4px 4px 0 rgba(0,0,0,0.2);
+      }
+
+      .sub-heading-wrapper h2 {
+        font-size: 50px;
+      }
+
+      .sub-heading-wrapper p {
+        font-size: 30px;
+      }
+
+      .block-left {
+        display: block;
+        float: left;
+      }
+
+      .main-top-fig {
+        width: 100%;
+        height: 600px;
+        text-align: center;
+        background: url("../imgs/top-bg.jpg");
+        background-size: cover;
+        background-position: 0 -200px;
+      }
+
+      .main-top-fig p {
+        font-size: 50px;
+        padding: 50px 0 0 0; 
+        color: white;
+      }
+
+      .row {
+        display: block;
+        float: left;
+        width: 100%;
+      }
+
+      .right {
+        float: right
+      }
+
+      [class *= "col-"] {
+        display: block;
+        float: left;
+      }
+
+      .col-1-4 {
+        width: 25%;
+      }
+
+      .col-11-24 {
+        width: 45.833333%;
+      }
+
+      .col-13-24 {
+        width: 54.166666%;
+      }
+
+      .col-1-5 {
+        width: 20%;
+      }
+
+      .col-4-5 {
+        width: 80%;
+      }
+
+      .col-1-3 {
+        width: 33.333333%;
+      }
+
+      .col-2-3 {
+        width: 66.666666%;
+      }
+
+      .col-1-6 {
+        width: 16.666666%;
+      }
+
+      .col-5-6 {
+        width: 83.333333%
+      }
+
+      .main-item {
+        padding: 20px;
+      }
+
+      .card {
+        cursor: pointer;
+        background: #fff;
+        box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+      }
+
+      .card, .card-image, .card-content {
+        width: 100%;
+      }
+
+      .card .card-content {
+        padding: 12px;
+      }
+
+      .card .card-content p {
+        white-space: nowrap; /* 決定文字長度超過寬度是否自動往下長 */
+        text-overflow: ellipsis;
+        overflow: hidden;
+        font-size: 14px;
+        padding: 0;
+      }
+
+      .card .card-content p.title, .card .card-content p.price {
+        font-size: 16px;
+      }
+
+      .card .card-content p.price {
+        font-weight: bold;
+      }
+
+      .mask-wrapper {
+        position: relative;
+      }
+
+      .mask {
+        display: none;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background: rgba(0, 0, 0, 0.6);
+      }
+
+      .mask span {
+        background: rgb(233, 30, 99);
+        color: #fff;
+        display: block;
+        width: 56px;
+        height: 56px;
+        font-size: 40px;
+        line-height: 56px;
+        text-align: center;
+        position: absolute;
+        right: 20px;
+        top: 20px;
+        border-radius: 50%;
+        border: 1px solid #fff;
+      }
+
+      .card:hover .mask {
+        display: block;
+      }
+
+      .overlay {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background: rgba(0, 0, 0, 0.7);
+      }
+
+      .dialog-wrapper {
+        position: relative;
+        top: 10%;
+        left: 15%;
+        width: 70%;
+        height: 80%;
+        background: #f4f4f4;
+      }
+
+      .dialog {
+        width: 100%;
+        height: 100%;
+        padding: 25px;
+        overflow: scroll;
+      }
+
+      .dialog-wrapper .close {
+        position: absolute;
+        display: block;
+        top: -25px;
+        right: -25px;
+        width: 50px;
+        height: 50px;
+        text-align: center;
+        line-height: 50px;
+        font-size: 32px;
+        color: #fff;
+        background: #03a9f4;
+        border-radius: 50%;
+        cursor: pointer;
+      }
+
+      .dialog .fig-area img {
+        margin-bottom: 10px;
+      }
+
+      .dialog .dialog-header {
+        margin-bottom: 20px;
+      }
+
+      .dialog .dialog-header h2 {
+        font-size: 36px;
+        font-weight: normal;
+      }
+
+      .dialog .left-info {
+        padding-right: 10px; 
+      }
+
+      .dialog .sub-block {
+        margin-bottom: 15px;
+      }
+
+      .dialog .sub-block.top-border {
+        border-top: 1px solid #999999;
+        padding-top: 10px;
+      }
+
+      .dialog .left-info .real-price {
+        font-size: 36px;
+      }
+
+      .dialog .left-info strike.original-price {
+        font-size: 14px;
+        color: #999999;
+        display: block;
+      }
+
+      .dialog .select-wrapper {
+        padding: 0 10px 0 0;
+      }
+
+      .dialog select {
+        text-align: right;
+        background: #fff;
+        color: #57585a;
+        font-size: 24px;
+        display: block;
+        width: 100%;
+      }
+
+      .dialog select > option {
+        text-align: right;
+      }
+
+      .dialog button {
+        background: rgb(233, 30, 99);
+        color: #fff;
+        display: block;
+        width: 100%;
+        font-size: 22px;
+        line-height: 38px;
+        border: 0;
+        border-radius: 5px;
+      }
+
+      .dialog .product-spec ul, .dialog .product-spec li {
+        margin-top: 10px;
+      }
+
+      .shopping-cart-wrapper {
+        position: relative;
+      }
+
+      .shopping-cart-wrapper i {
+        font-size: 35px;
+      }
+
+      .shopping-cart-wrapper .quantity {
+        position: absolute;
+        top: -5px;
+        right: -10px;
+        font-size: 12px;
+        background: #e91e63;
+        color: #fff;
+        display: block;
+        width: 25px;
+        height: 25px;
+        line-height: 25px;
+        text-align: center;
+        border-radius: 50%;
+      }
+
+      .dialog.no-padding {
+        padding: 0;
+      }
+
+      .dialog .dialog-header.padding-header {
+        padding: 25px;
+        margin: 0;
+      }
+
+      .dialog .padding-content {
+        padding: 0 15px 15px 15px;
+      }
+
+      .dialog .card .card-content p.title, .dialog .card .card-content p.price {
+        font-size: 22px;
+      }
+
+      .dialog .card .card-content p.price {
+        margin-bottom: 10px;
+      }
+
+      .dialog .main-item {
+        padding: 0 10px 20px 10px;
+      }
+
+      .dialog.no-padding .sub-block.top-border {
+        padding: 20px;
+      }
+
+      form .form-group {
+        padding: 15px 0 0 0;
+      }
+
+      form .form-group label {
+        padding: 0 10px 0 0;
+        line-height: 36px;
+      }
+
+      form .form-group input {
+        margin: 0;
+        padding: 8px;
+        font-size: 16px;
+        height: 36px;
+        width: 30%;
+        float: left;
+      }
+
+      form .form-group input.fixed-sm-size {
+        width: 60px;
+        margin-right: 5px;
+      }
+
+      form .form-group input.lg {
+        width: 100%;
+      }
+
+      form .form-group input[type="text"] {
+        border: 1px solid #999999;
+        border-radius: 4px;
+      }
+
+      .dialog .detail-list-title {
+        margin-bottom: 20px;
+      }
+
+    </style>
+  </head>
+  <body>
+    <header class="row">
+      <h1 class="block-left">光速買</h1>
+      <input class="block-left" type="text" placeholder="想買什麼？" />
+      <input class="block-left" type="button" value="搜尋" />
+      <nav class="right">
+        <ul>
+          <li class="block-left shopping-cart-wrapper">
+            <i class="fas fa-shopping-cart"></i>
+            <span class="quantity">900</span>
+          </li>
+          <li class="block-left">時尚流行</li>
+          <li class="block-left">美味零食</li>
+        </ul>
+      </nav>
+    </header>
+    <main class="row">
+      <div class="row main-top-fig">
+        <p>馬上買，現在就買！</p>
+      </div>
+      <div class="row sub-heading-wrapper">
+        <h2>2019 夏季大特賣</h2>
+        <p>時間自&nbsp;<time>07/01</time>&nbsp;至&nbsp;<time>08/31</time>&nbsp;為止</p>
+        <p>限時特價中！</p>
+      </div>
+      <div class="row">
+        <div class="col-1-4 main-item">
+          <div class="card">
+            <div class="card-image mask-wrapper">
+              <img src="../imgs/item.jpg">
+              <div class="mask"><span>+</span></div>
+            </div>
+            <div class="card-content">
+              <p class="title">濃湯調理包</p>
+              <p class="price">NT$ 100</p>
+              <p>夏季限定最新口味調理包 夏季限定最新口味調理包 夏季限定最新口味調理包 夏季限定最新口味調理包</p>
+              <p>光速好食有限公司</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    
+    <div class="overlay">
+      <div class="dialog-wrapper">
+        <div class="dialog no-padding">
+          <div class="row dialog-header padding-header">
+            <h2>訂單總計 NT$ 500</h2>
+          </div>
+          <div class="row sub-block top-border">
+            <h3 class="row">聯絡人資訊</h3>
+            <form class="row">
+              <div class="row form-group">
+                <label class="col-1-6" for="name">
+                  姓名
+                </label>
+                <div class="col-5-6">
+                  <input class="" type="text" name="name" id="name" />
+                </div>
+              </div>
+              <div class="row form-group">
+                <label class="col-1-6" for="mobile">
+                  手機號碼
+                </label>
+                <div class="col-5-6">
+                  <input class="" type="text" name="mobile" id="mobile" />
+                </div>
+              </div>
+              <div class="row form-group">
+                <label class="col-1-6" for="email">
+                  電子信箱
+                </label>
+                <div class="col-5-6">
+                  <input class="" type="text" name="email" id="email" />
+                </div>
+              </div>
+              <div class="row form-group">
+                <label class="col-1-6" for="address">
+                  收貨地址
+                </label>
+                <div class="col-5-6">
+                  <input class="lg" type="text" name="address" id="address" />
+                </div>
+              </div>
+              <div class="row form-group">
+                <label class="col-1-6" for="credit_card_1">
+                  信用卡號
+                </label>
+                <div class="col-5-6">
+                  <input class="fixed-sm-size" type="text" name="credit_card_1" id="credit_card_1" />
+                  <input class="fixed-sm-size" type="text" name="credit_card_2" id="credit_card_2" />
+                  <input class="fixed-sm-size" type="text" name="credit_card_3" id="credit_card_3" />
+                  <input class="fixed-sm-size" type="text" name="credit_card_4" id="credit_card_4" />
+                </div>
+              </div>
+              <div class="row form-group">
+                <label class="col-1-6" for="credit_card_sec">
+                  信用卡安全碼
+                </label>
+                <div class="col-5-6">
+                  <input class="fixed-sm-size" type="text" name="credit_card_sec" id="credit_card_sec" />
+                </div>
+              </div>
+              <div class="row form-group">
+                <label class="col-1-6" for="credit_card_expire_month">
+                  信用卡有效期限
+                </label>
+                <div class="col-5-6">
+                  <input class="fixed-sm-size" type="text" name="credit_card_expire_month" id="credit_card_expire_month" placeholder="月份" />
+                  <input class="fixed-sm-size" type="text" name="credit_card_expire_year" id="credit_card_expire_year" placeholder="年份" />
+                </div>
+              </div>
+              <div class="row form-group">
+                <div class="col-1-6">
+                  &nbsp;
+                </div>
+                <div class="col-1-6">
+                  <button type="button">確認付款</button>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="row sub-block top-border padding-content">
+            <h3 class="row detail-list-title">訂購商品明細</h3>
+            <div class="col-1-3 main-item">
+              <div class="card row">
+                <div class="card-image row">
+                  <img src="../imgs/item.jpg">
+                </div>
+                <div class="card-content row">
+                  <div class="row">
+                    <p class="title">濃湯調理包</p>
+                    <p class="price">NT$ 100</p>
+                  </div>
+                  <div clas="row">
+                    <div class="col-1-3 select-wrapper">
+                      <select name="quantity" dir="rtl">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="col-2-3">
+                    <button type="button"><i class="fas fa-trash-alt"></i></button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-1-3 main-item">
+              <div class="card row">
+                <div class="card-image row">
+                  <img src="../imgs/item.jpg">
+                </div>
+                <div class="card-content row">
+                  <div class="row">
+                    <p class="title">濃湯調理包</p>
+                    <p class="price">NT$ 100</p>
+                  </div>
+                  <div clas="row">
+                    <div class="col-1-3 select-wrapper">
+                      <select name="quantity" dir="rtl">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="col-2-3">
+                    <button type="button"><i class="fas fa-trash-alt"></i></button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-1-3 main-item">
+              <div class="card row">
+                <div class="card-image row">
+                  <img src="../imgs/item.jpg">
+                </div>
+                <div class="card-content row">
+                  <div class="row">
+                    <p class="title">濃湯調理包</p>
+                    <p class="price">NT$ 100</p>
+                  </div>
+                  <div clas="row">
+                    <div class="col-1-3 select-wrapper">
+                      <select name="quantity" dir="rtl">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="col-2-3">
+                    <button type="button"><i class="fas fa-trash-alt"></i></button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-1-3 main-item">
+              <div class="card row">
+                <div class="card-image row">
+                  <img src="../imgs/item.jpg">
+                </div>
+                <div class="card-content row">
+                  <div class="row">
+                    <p class="title">濃湯調理包</p>
+                    <p class="price">NT$ 100</p>
+                  </div>
+                  <div clas="row">
+                    <div class="col-1-3 select-wrapper">
+                      <select name="quantity" dir="rtl">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="col-2-3">
+                    <button type="button"><i class="fas fa-trash-alt"></i></button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-1-3 main-item">
+              <div class="card row">
+                <div class="card-image row">
+                  <img src="../imgs/item.jpg">
+                </div>
+                <div class="card-content row">
+                  <div class="row">
+                    <p class="title">濃湯調理包</p>
+                    <p class="price">NT$ 100</p>
+                  </div>
+                  <div clas="row">
+                    <div class="col-1-3 select-wrapper">
+                      <select name="quantity" dir="rtl">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="col-2-3">
+                    <button type="button"><i class="fas fa-trash-alt"></i></button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="close">X</div>
+      </div>
+    </div>
+    
+    <!--
+    <div class="overlay">
+      <div class="dialog-wrapper">
+        <div class="dialog">
+          <div class="row dialog-header">
+            <h2>濃湯調理包</h2>
+          </div>
+          <div class="row">
+            <div class="col-11-24 left-info">
+              <div class="row sub-block">
+                <strike class="original-price">NT$ 200</strike>
+                <p class="real-price">NT$ 100</p>
+              </div>
+              <div class="row sub-block">
+                <div class="col-1-5 select-wrapper">
+                  <select name="quantity" dir="rtl">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                  </select>
+                </div>
+                <div class="col-4-5">
+                  <button type="button">加入購物車</button>
+                </div>
+              </div>
+              <div class="row sub-block">
+                <p>夏季限定最新口味調理包 夏季限定最新口味調理包 夏季限定最新口味調理包 夏季限定最新口味調理包</p>
+              </div>
+              <div class="row sub-block top-border">
+                <h3>商品規格</h3>
+                <ul class="product-spec">
+                  <li>廠商名稱: 光速好食有限公司</li>
+                  <li>製造日期: 2019-07-01</li>
+                  <li>保存期限: 2年</li>
+                  <li>容量: 56.3g</li>
+                  <li>成分: 玉米,馬鈴薯澱粉,糖,麥芽糊精,鹽,蔬菜粉(玉米、香菇、蕃茄),磷酸二澱粉,棕櫚油,酵母精粉,香料,紅蘿蔔,調味劑(5'-次黃嘌呤核?磷酸二鈉、5'-鳥嘌呤核?磷酸二鈉,檸檬酸,琥珀酸二鈉),天然香辛料(芥末、薑黃),香菜,乳酸鈣,維生素E,維生素A,檸檬酸鐵,維生素B2</li>
+                  <li>原產地: 台灣</li>
+                  <li>廠商名稱: 光速好食有限公司</li>
+                  <li>製造日期: 2019-07-01</li>
+                  <li>保存期限: 2年</li>
+                  <li>容量: 56.3g</li>
+                  <li>成分: 玉米,馬鈴薯澱粉,糖,麥芽糊精,鹽,蔬菜粉(玉米、香菇、蕃茄),磷酸二澱粉,棕櫚油,酵母精粉,香料,紅蘿蔔,調味劑(5'-次黃嘌呤核?磷酸二鈉、5'-鳥嘌呤核?磷酸二鈉,檸檬酸,琥珀酸二鈉),天然香辛料(芥末、薑黃),香菜,乳酸鈣,維生素E,維生素A,檸檬酸鐵,維生素B2</li>
+                  <li>原產地: 台灣</li>
+                  <li>廠商名稱: 光速好食有限公司</li>
+                  <li>製造日期: 2019-07-01</li>
+                  <li>保存期限: 2年</li>
+                  <li>容量: 56.3g</li>
+                  <li>成分: 玉米,馬鈴薯澱粉,糖,麥芽糊精,鹽,蔬菜粉(玉米、香菇、蕃茄),磷酸二澱粉,棕櫚油,酵母精粉,香料,紅蘿蔔,調味劑(5'-次黃嘌呤核?磷酸二鈉、5'-鳥嘌呤核?磷酸二鈉,檸檬酸,琥珀酸二鈉),天然香辛料(芥末、薑黃),香菜,乳酸鈣,維生素E,維生素A,檸檬酸鐵,維生素B2</li>
+                  <li>原產地: 台灣</li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-13-24 fig-area">
+              <img src="../imgs/item.jpg">
+              <img src="../imgs/item.jpg">
+              <img src="../imgs/item.jpg">
+            </div>
+          </div>
+        </div>
+        <div class="close">X</div>
+      </div>
+    </div>
+    -->
+  </body>
+</html>
+

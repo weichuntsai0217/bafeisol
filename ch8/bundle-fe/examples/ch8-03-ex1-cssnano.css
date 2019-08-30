@@ -1,0 +1,17 @@
+/**
+  ## ch8-03 範例1: cssnano
+  * cssnano可去除css檔中不必要的空白, 換行, 和註解, 以減小檔案容量.
+*/
+
+
+* {
+  box-sizing: border-box;
+}
+
+select {
+  appearance: none;
+}
+
+header, .main-heading {
+  box-shadow: 0 4px 4px 0 rgba(0,0,0,0.2);
+}

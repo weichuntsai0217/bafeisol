@@ -1,0 +1,32 @@
+/**
+  ## ch8-03 範例2: autoprefixer
+  * 本範例皆截錄自先前我們撰寫的光速買網站的css檔
+  * autoprefixer自動加特定css rule的vendor前綴, 解決跨瀏覽器的問題
+  * autoprefixer的資料庫來自 https://caniuse.com/
+  * 有兩個地方要做相關設定
+    1. postcss.config.js: 將開關設為true.
+    2. package.json: 設定支援的瀏覽器版本.
+*/
+
+* {
+  box-sizing: border-box;
+}
+
+select {
+  appearance: none;
+}
+
+header, .main-heading {
+  box-shadow: 0 4px 4px 0 rgba(0,0,0,0.2);
+}
+
+.main-heading {
+  background: linear-gradient(0deg, rgb(251, 176, 30), rgb(229, 2, 18), rgb(192, 6, 156));
+}
+
+@media screen and (max-width: 568px) {
+  #mobile-menu-button.active:before {
+    transition: all 0.3s ease-out;
+    transform: rotate(45deg);
+  }
+}

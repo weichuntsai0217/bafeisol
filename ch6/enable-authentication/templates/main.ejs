@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <%- include partials/head.ejs %>
+  <body>
+    <%- include partials/header.ejs %>
+    <div class="fake-header"></div>
+    <main class="row">
+      <% if (topFig) { %>
+      <%- include partials/topFig.ejs %>
+      <% } %>
+      <% if (mainHeading) { %>
+      <%- include partials/mainHeading.ejs %>
+      <% } %>
+      <%- include partials/mainContent.ejs %>
+    </main>
+    <%- include partials/dialog.ejs %>
+    <script src="/js/header.js"></script>
+    <% if (user) { %>
+      <script src="/js/common.js"></script>
+      <script src="/js/mainpages.js"></script>
+    <% } %>
+  </body>
+</html>

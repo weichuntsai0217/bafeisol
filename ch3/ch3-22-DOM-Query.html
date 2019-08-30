@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+</head>
+<body>
+
+<h1 class="yes">aa</h1>
+<h1 class="no" name="john">bb</h1>
+<h1 class="yes good" name="john" id="cat">cc</h1>
+<div>
+  <h1 class="no" id="cat">dd</h1>
+  <h1 class="yes good">ee</h1>
+  <h1 class="no" name="john">ff</h1>
+  <input type="text" placeholder="輸入一下啊" />
+  <input type="button" value="點我點我" />
+</div>
+
+<script>
+'use strict'
+/**
+  # 3-22 DOM的搜尋
+  想操作DOM元素, 你必須先找到它.
+*/
+
+/**
+  範例 1: [只選第1個] 根據ID名稱選取
+  ```
+  document.getElementById(elementId)
+  ```
+*/
+// var target = document.getElementById('cat')
+// target.style.color = 'red'
+/*
+  document.getElementById('cat').style.color = 'red'
+*/
+
+/**
+  # 3-22 Quiz 1
+  1. 內容為"dd"的h1 tag的id也是"cat", 為甚麼經過範例1的操作後其文字沒有變色?
+  2. 在範例1中, 若我想加一行code將背景顏色改成黃色(yellow), 猜猜看要怎麼做.
+*/
+
+/**
+  範例 2: [選多個] 根據元素tag名稱選取
+  ```
+  document.getElementsByTagName(tagName)
+  ```
+*/
+// var targets = document.getElementsByTagName('h1') // 會是一個h1 DOM的集合, 這個集合可以看成array, array裡每一個元素都是h1 DOM
+// targets[0].style.color = 'red' // array本身沒有改顏色的能力, 真正有改顏色能力的是array裡的元素(也就是DOM)
+/*
+// 若想要所有撈到的元素都想改紅色, 你可以跑一個迴圈
+for (var i = 0; i < targets.length; i++) {
+  targets[i].style.color = 'red'
+}
+*/
+
+/**
+  # 3-22 Quiz 2
+  請將本範例畫面中的div的border設為 '1px solid black'
+*/
+
+/**
+  範例 3: [選多個] 根據屬性"name"選取
+  ```
+  document.getElementsByName(name)
+  ```
+*/
+// var targets = document.getElementsByName('john')
+// for (var i = 0; i < targets.length; i++) {
+//   targets[i].style.color = 'red'
+// }
+
+/**
+  # 3-22 Quiz 3
+  承範例 3, 若我只想將內容為"ff"的h1 tag的字體顏色改為紅色, 範例 3的code要怎麼改呢?
+*/
+
+/**
+  範例 4: [選多個] 根據 Class 名稱選取
+  ```
+  document.getElementsByClassName(classname)
+  ```
+*/
+// 單一個class
+// var targets = document.getElementsByClassName('yes')
+// for (var i = 0; i < targets.length; i++) {
+//   targets[i].style.color = 'red'
+// }
+
+// 多個class, 就像html上的class寫法一樣要用空格分開
+// var targets = document.getElementsByClassName('yes good')
+// for (var i = 0; i < targets.length; i++) {
+//   targets[i].style.color = 'green'
+// }
+
+/**
+  # 3-22 Quiz 4
+  若將範例4改寫如下(class的順序從'yes good'變成'good yes')
+  ```
+  var targets = document.getElementsByClassName('good yes')
+  for (var i = 0; i < targets.length; i++) {
+    targets[i].style.color = 'green'
+  }
+  ```
+  請自己run一次程式, 看看效果是否一樣.
+*/
+
+/**
+  範例 5: [選多個] 根據 CSS 選擇器來選取元素，效能較好
+  ```
+  document.querySelectorAll(CSS selector)
+  ```
+*/
+// 單一個class
+// var targets = document.querySelectorAll('.yes')
+// for (var i = 0; i < targets.length; i++) {
+//   targets[i].style.color = 'red'
+// }
+
+/**
+  # 3-22 Quiz 5
+  若我要搜尋的DOM的class必須同時有"yes"和"good", 則範例5的code要怎麼改寫呢?
+*/
+
+/**
+  範例 6: [只選第1個] 根據 CSS 選擇器來選取元素，效能較好
+  ```
+  document.querySelector(CSS selector)
+  ```
+*/
+// var target = document.querySelector('[type="button"]')
+// target.style.color = 'red'
+/**
+  # 3-22 Quiz 6
+  1. 若我要搜尋的DOM的type屬性的值為"text", 請問範例6的搜尋式該如何改寫?
+  2. 若我是要將font-weight要改成800, 猜猜看範例6的第2行該如何改寫?
+*/
+
+</script>
+</body>
+</html>
